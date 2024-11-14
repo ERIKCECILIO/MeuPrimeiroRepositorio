@@ -1,1 +1,1 @@
-# MeuPrimeiroRepositorio
+# MeuRepositorioSptechAlgoritmos
