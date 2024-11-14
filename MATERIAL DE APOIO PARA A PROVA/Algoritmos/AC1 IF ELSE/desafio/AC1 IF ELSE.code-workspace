@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../Algoritmos Aula 01"
+		},
+		{
+			"path": "../../Algoritmos Aula 02"
+		},
+		{
+			"path": "../../ELSE IF E ANINHAMENTO"
+		},
+		{
+			"path": "../../FOR"
+		},
+		{
+			"path": "../../Números Aleatórios"
+		},
+		{
+			"path": "../../Operações com Texto - Números Aleatórios"
+		},
+		{
+			"path": "../../Operadores Lógicos AND-OR 06-07-08"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Algoritmos Aula 02"
+	}
+}

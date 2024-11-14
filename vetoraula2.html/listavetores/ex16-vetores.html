@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome Produto: <input type="text" id="ipt_nomeproduto">
+    Preço de Compra: <input type="number" id="ipt_precocompra">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <button onclick="pesquisa()">Relatório de Estoque</button>
+
+    <div id="div_men"></div>
+
+</body>
+
+</html>
+<script>
+    var lista_nomes = []
+    var lista_precos = []
+    var lista_numeros = []
+
+    var qtd = 0
+
+    function cadastrar() {
+        var nomeProduto = ipt_nomeproduto.value
+        var precoCompra = Number(ipt_precocompra.value)
+
+        if (nomeProduto != "" && precoCompra>0) {
+            lista_nomes.push(nomeProduto)
+            lista_precos.push(precoCompra)
+            qtd++
+            if (qtd == 1) {
+                div_men.innerHTML = `${qtd} Produto cadastrado`
+            } else (qtd > 1)
+            div_men.innerHTML = `${qtd} Produtos cadastrado`
+        }
+    }
+
+    function pesquisa() {
+        if (qtd == 0) {
+            div_men.innerHTML = `Nenhum produto foi cadastrado ainda.`;
+
+        } else {
+            var maior = lista_precos[0];
+            var menor = lista_precos[0];
+            var maiscaro = lista_nomes[0];
+            var maisbarato = lista_nomes[0];
+            var soma = 0;
+
+            var mensagem = `Total de produtos no carrinho:${qtd}<br>`;
+
+            for (var contador = 0; contador < lista_precos.length; contador++) {
+                var valorVenda = lista_precos[contador] * 1.25;
+                soma += lista_precos[contador];
+
+                var numero_atual = lista_precos[contador];
+                if (numero_atual > maior) {
+                    maior = numero_atual;
+                    maiscaro = lista_nomes[contador];
+                }
+
+                if (numero_atual < menor) {
+                    menor = numero_atual;
+                    maisbarato = lista_nomes[contador];
+                }
+                mensagem += `Produto ${contador + 1}: ${lista_nomes[contador]}<br>
+                         Preço de compra: R$${lista_precos[contador].toFixed(2)}. Vender por R$${valorVenda.toFixed(2)}<br>`;
+            }
+
+            var media = soma / qtd;
+
+            mensagem += `Produto mais caro: ${maiscaro}(R$${maior.toFixed(2)})<br>
+                     Produto mais barato: ${maisbarato}(R$${menor.toFixed(2)})<br>
+                     Soma do carrinho: R$${soma.toFixed(2)}<br>
+                     Média dos preços do carrinho de compra: R$${media.toFixed(2)}`;
+
+            div_men.innerHTML = mensagem;
+        }
+    }
+
+</script>

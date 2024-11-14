@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="ipt_frase">
+
+    <button onclick="verticalizar()">Frase</button><br><br>
+
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    var frase_lista = [];
+
+
+    function verticalizar() {
+        var mensagem = ""
+
+        ipt_frase.push(frase);
+        var frase = ipt_frase.value;
+        var tamanho_frase = frase.length;
+
+        var possui_vogal = "não";
+        var frase_minuscula = frase.toLowerCase();
+
+        if (frase_minuscula.includes("a") ||
+            frase_minuscula.includes("e") ||
+            frase_minuscula.includes("i") ||
+            frase_minuscula.includes("o") ||
+            frase_minuscula.includes("u")) {
+
+                 possui_vogal = "sim";
+            }
+
+
+            var b_item = ipt_frase[0];
+        var o_item = ipt_frase[1];
+        var m_item = ipt_frase[2];
+        var espaco_item = ipt_frase[3];
+        var d_item = ipt_frase[4];
+        var i_item = ipt_frase[5];
+        var a_item = ipt_frase[6];
+        var exclamacao_item = ipt_frase[ipt_frase.length - 1];
+
+        for (var index = 0; index < tamanho_frase; index++) {
+
+            mensagem.innerHTML += `${frase[index]} <br>
+        
+        
+         VERTICAL:
+
+        B: ${b_item} <br>
+        O: ${o_item} <br>
+        M: ${m_item} <br>
+        ESPAÇO: ${espaco_item} <br>
+        D: ${d_item} <br>
+        I: ${i_item} <br>
+        A: ${a_item} <br>
+        !: ${exclamacao_item} <br>
+
+         Possui vogal: ${possui_vogal}<br>
+        
+        
+        
+        `
+        }
+
+
+
+    }

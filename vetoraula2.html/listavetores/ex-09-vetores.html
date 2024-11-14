@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Diga o nome dos seus projetos:
+    <input type="text" id="ipt_projetoemvida"><br><br>
+    <button onclick="Registrar()">Registrar Projeto</button><BR><br>
+    <button onclick="Mostrar()">Mostrar Projetos</button><BR><br>
+    <div id="div_men"></div>
+</body>
+
+</html>
+<script>
+    var projetosEmVida = []
+    div_men.innerHTML=""
+
+    function Registrar() {
+        var projetos = ipt_projetoemvida.value
+
+        if (projetos != "") {
+            projetosEmVida.push(projetos)
+            if (projetosEmVida.length >= 0 && projetosEmVida.length <= 4) {
+                div_men.innerHTML = `Você já fez ${projetosEmVida.length} na sua vida, por isso é um profissional considerado júnior!`
+            } else if (projetosEmVida.length >= 5 && projetosEmVida.length <= 12) {
+                div_men.innerHTML = `Você já fez ${projetosEmVida.length} na sua vida, por isso é um profissional considerado pleno!`
+            } else div_men.innerHTML = `Você já fez ${projetosEmVida.length} na sua vida, por isso é um profissional considerado sênior!`
+        } else div_men.innerHTML = "Digite algum projeto feito em vida."
+
+    }
+    function Mostrar() {
+        var men = ""
+        for (var index = projetosEmVida.length-1; index >= 0; index--) {
+            men += `<br><br>${projetosEmVida[index]}<br><br>`
+        }
+        div_men.innerHTML = men
+
+    }
+</script>

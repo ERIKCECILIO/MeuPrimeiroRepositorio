@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input oninput="analisar()" type="text" id="input_texto">
+    
+</body>
+</html>
+<script>
+    function analisar(){
+        var texto = input_texto.value
+
+        input_texto.value = 
+        texto 
+        .replaceAll('!' , '')
+        .replaceAll('@' , '')
+        .replaceAll('#' , '')
+        .replaceAll('$' , '')
+        .replaceAll('%' , '')
+        .replaceAll('&' , '')
+       
+    }
+
+
+
+
+
+</script>

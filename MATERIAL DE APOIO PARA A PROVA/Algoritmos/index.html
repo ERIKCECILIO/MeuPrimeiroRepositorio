@@ -1,0 +1,17 @@
+function validarSenha() {
+    var pass = ipt_pass.value
+    ipt_pass.value = pass
+        .replaceAll('!', '')
+        .replaceAll('@', '')
+        .replaceAll('#', '')
+        .replaceAll('$', '')
+        .replaceAll('%', '')
+        .replaceAll('&', '')
+
+    if (pass.length >= 3) {
+        ipt_pass.value.style.border = "3px solid #00ff00"
+    } else {
+        correto = false
+        ipt_pass.value.style.border = "3px solid red"
+    }
+}

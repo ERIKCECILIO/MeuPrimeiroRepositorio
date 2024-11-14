@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite uma frase:
+    <input type="int" id="input_frase"><br>
+    Digite uma quantidade:
+    <input type="text" id="input_quant"> <br>
+
+
+    <button onclick="frase()">Papagaio</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+
+    function frase(){
+
+
+    var frase= (input_frase.value)
+    var quant= Number(input_quant.value)
+
+        for (var contador = 0; contador <= quant; contador++){
+         alert (  `${frase}`)
+        }
+    }
+
+</script>

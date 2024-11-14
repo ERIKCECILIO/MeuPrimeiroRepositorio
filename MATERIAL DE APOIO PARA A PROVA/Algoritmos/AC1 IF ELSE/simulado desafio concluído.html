@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulado Algoritmos AC</title>
+</head>
+
+<body>
+
+  Salário: <input type="number" id="input_salario"><br>
+  Adicional: <input type="number" id="input_adicional"><br>
+  Bônus: <input type="number" id="input_bonus"><br>
+
+  <button onclick="analisar()">Analise sua renda!</button>
+  
+  <div id="div_msg"></div>
+
+</body>
+
+<script>
+  function analisar() {
+    var salario = Number(input_salario.value);
+    var adicional = Number(input_adicional.value);
+    var bonus = Number(input_bonus.value);
+
+    // soma dos 3 para gerar o bruto
+    var bruto = salario + adicional + bonus;
+
+    var descontoIR = (bruto * 0.125);
+
+    if (bruto >= 10000) { // caso maior ou igual a 10000
+      bruto = bruto - descontoIR; // desconte o IR salario bruto
+    }else 
+    descontoIR = 0
+
+    // calculo do desconto
+    var descontoINSS = (bruto * 10) / 100;
+    var descontoFGTS = (bruto * 8) / 100;
+
+    // calculo já do bruto com descontos
+    var salarioLiquido = bruto - descontoFGTS - descontoINSS
+
+    var texto = "";
+
+    if (salarioLiquido > 2500) {
+      var valorPoupar = (salarioLiquido * 15)/100;
+      texto = `Com a renda de R$${salarioLiquido}, é recomendado poupar R$${valorPoupar}, para que em um ano tenha poupado R$${valorPoupar * 12}`
+    } else {
+      texto = `Com a renda de R$${salarioLiquido}, é recomendado obter renda extra para realizar uma poupança.`
+    }
+
+    div_msg.innerHTML = `
+                <br>
+                ANÁLISE DA SUA RENDA
+                <br>
+                <br>
+                Com o salário de R$${salario}, com adicional de R$${adicional} e bônus de R$${bonus}, você tem:
+                <br>
+                <br>
+                Bruto: R$${salario + adicional + bonus}  
+                <br>
+                <br>
+                IR: R$${descontoIR}  
+                <br>
+                <br>
+                INSS: R$${descontoINSS}  
+                <br>
+                <br>
+                FGTS: R$${descontoFGTS} 
+                <br>
+                <br>
+                Líquido: R$${salarioLiquido}
+                <br>
+                <br>
+                ${texto}
+    `;
+  }
+
+</script>
+</html>

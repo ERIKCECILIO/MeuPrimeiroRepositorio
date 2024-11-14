@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elseifAula01Ex04</title>
+</head>
+<body>
+
+    Coloque seu peso aqui! <input type="number" id="ipt_peso">
+    
+    <button onclick="analise()">Você está no peso ideal?</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+        function analise() {
+
+var peso = Number(ipt_peso.value);
+
+if (peso <= 13.5) {
+    div_mensagem.innerHTML = "Você está abaixo do seu peso ideal!";
+}else if (peso == 18.3) {
+    div_mensagem.innerHTML = "Você está em seu peso perfeito!";
+}else if (peso >= 21.2) {
+    div_mensagem.innerHTML = "Você está acima do seu peso ideal!";
+} else if (peso > 13.5) {
+    div_mensagem.innerHTML = "Você está com seu peso na média!";
+} 
+}
+
+
+
+
+
+
+</script>

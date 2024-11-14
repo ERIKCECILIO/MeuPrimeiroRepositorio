@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantas horas você dormiu? <input type="number" id="ipt_horas">
+
+    <button onclick="calcular()">Calcular Sono</button>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var horasDormidas = Number.parseFloat(ipt_horas.value);
+
+        var horasFase1 = Number(horasDormidas * 0.05)
+        var horasFase2 = Number(horasDormidas * 0.45)
+        var horasFase3 = Number(horasDormidas * 0.30)
+        var horasFaseREM = Number(horasDormidas * 0.20)
+
+
+        mensagem.innerHTML = (`Ao dormir ${horasDormidas} horas, você dormiu:<br><br>
+
+        ${horasFase1.toFixed(2)} (5%) na fase 1 <br>
+        ${horasFase2.toFixed(2)} (45%) na fase 2 <br>
+        ${horasFase3.toFixed(2)} (30%) na fase 3 <br>
+        ${horasFaseREM.toFixed(2)} (20%) na fase REM <br>
+
+        
+        
+        `)
+    }
+</script>

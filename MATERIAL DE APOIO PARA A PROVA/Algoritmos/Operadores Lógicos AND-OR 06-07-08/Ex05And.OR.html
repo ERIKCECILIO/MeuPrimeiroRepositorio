@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex05And.OR</title>
+</head>
+
+<body>
+
+    <h1>Avalie seu clima ambiente!</h1>
+
+    Coloque a temperatura: <input type="number" id="ipt_temp">
+    Coloque a umidade do ar: <input type="number" id="ipt_umidade">
+
+    <button onclick="avaliar()">Avaliar clima!</button>
+    
+    <div id="ok"></div>
+
+</body>
+
+</html>
+<script>
+    function avaliar() {
+
+        var umidade = Number(ipt_umidade.value);
+        var temperatura = Number(ipt_temp.value);
+
+
+
+        if (umidade < 0 || umidade > 100) {
+
+            alert(`Valor de umidade inválido!`),
+
+            ok.innerHTML = ""
+
+        } else if (umidade < 60 && temperatura >= 22 && temperatura <= 23) {
+
+            ok.innerHTML = `Que clima agradável!`
+
+        } else
+
+            ok.innerHTML = `Que clima desagradável!`
+
+
+    }
+
+
+
+</script>

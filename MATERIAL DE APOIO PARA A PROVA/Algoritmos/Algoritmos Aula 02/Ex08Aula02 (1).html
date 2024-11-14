@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Deposite: <input type="number" id="input_depositar">
+    <br>
+    Retirar: <input type="number" id="input_retirar">
+    <br>
+
+    <button onclick= "depositar()">Deposite aqui!</button>
+    <button onclick= "retirar()">Retire aqui!</button>
+    <div id="div_mensagem"> Saldo atual: 0 </div>
+    
+</body>
+
+<script>
+    var Saldo = 0
+
+function depositar() {
+        var number1 = Number(input_depositar.value);
+        var calcule = Saldo + number1
+        Saldo = Saldo + Number(input_depositar.value);
+
+        alert(' Depósito de ' + number1 + 'R$ efetuado! ' + 'Saldo atual: R$' + calcule ); 
+        var mensagem = (' Depósito de ' + calcule + 'R$ recebido! ' + ' E seu saldo atual é de ' + Saldo +'R$!');
+
+        div_mensagem.innerHTML = mensagem
+    }
+    function retirar() {
+        var number2 = Number(input_retirar.value);
+        var calcule = Saldo - number2
+        Saldo = Saldo - Number(input_retirar.value);
+
+        alert(' Retirada de ' + number2 + 'R$ efetuada! ' + 'Saldo atual: R$' + calcule ); 
+        var mensagem = (' Retirada de ' + calcule + 'R$ efetuada! ' + ' E seu saldo atual é de ' + Saldo +'R$!');
+
+        div_mensagem.innerHTML = mensagem
+    }
+
+        
+
+
+
+
+
+</script>
+</html>

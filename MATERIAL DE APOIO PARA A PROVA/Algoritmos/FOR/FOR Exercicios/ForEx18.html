@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEx18</title>
+</head>
+
+<body>
+
+    Quantas garrafinhas
+    de coca-cola você já bebeu na vida? <input type="number" id="ipt_coquinha">
+
+    <button onclick="calcular()">Ver quantidade!</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        var quantidade = Number(ipt_coquinha.value);
+
+        var mensagem = ""
+
+        for (var contador = 0; contador < quantidade; contador++) {
+
+            mensagem += "<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCyAW2qYSNLNtuu6v8xarRbuhOqu9opI5z0A&s'>"
+
+        }
+
+        div_mensagem.innerHTML = mensagem
+    }
+
+
+
+
+
+
+</script>

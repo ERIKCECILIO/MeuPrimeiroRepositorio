@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <br>Insira aqui filmes na ordem de favoritos para o que você menos gosta:<input type="text" id="ipt_filmes">
+    <button onclick="cadastrar()">Registrar filme</button><br><br>
+    <button onclick="visualizar()">Ver Filmes Favoritos</button><br><br>
+    <div id="div_men"></div>
+</body>
+
+</html>
+<script>
+
+    var lista_filmes = []
+
+    function cadastrar() {
+
+        var filmes = ipt_filmes.value
+
+        lista_filmes.push(filmes)
+    }
+
+
+    function visualizar() {
+
+        mensagem = `Total de filmes: ${lista_filmes.length}<br>`
+        mensagem += `O seu filme favorito é ${lista_filmes[0]}.<br>`
+        mensagem += ` De todos esses, o que você menos gosta é ${lista_filmes[lista_filmes.length - 1]}`
+
+        div_men.innerHTML = mensagem
+    }
+</script>

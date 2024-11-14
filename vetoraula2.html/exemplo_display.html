@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="div_1">
+        <h1>Eu faço parte do primeiro conteúdo</h1>
+        <button onclick="trocar()">Trocar</button>
+    </div>
+    <div id="div_2">
+        <h1>Eu sou o segundo conteúdo!</h1>
+        <button onclick="voltar()">Voltar</button>    
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function trocar() {
+        div_1.style.display = 'none';
+        div_2.style.display = 'block'; // "flex", "grid", etc. também funciona!
+    }
+
+    function voltar() {
+        div_1.style.display = 'block'; // "flex", "grid", etc. também funciona!
+        div_2.style.display = 'none';
+    }
+
+
+    // ao jogar o display para "none" ele entende que não deseja "nenhuma" visualização do display.
+</script>

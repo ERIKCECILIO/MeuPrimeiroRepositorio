@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome Produto: <input type="text" id="ipt_nomeproduto">
+    Preço de Compra: <input type="number" id="ipt_precocompra">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <button onclick="pesquisa()">Relatório de Estoque</button>
+
+    <div id="div_men"></div>
+
+</body>
+
+</html>
+<script>
+    var lista_nomes = []
+    var lista_precos = []
+
+    function cadastrar() {
+        var mensagem = ""
+
+        var nomeProduto = ipt_nomeproduto.value;
+        var precoCompra = Number(ipt_precocompra.value);
+
+
+        if (nomeProduto != '' && precoCompra != "") {
+            lista_nomes.push(nomeProduto);
+            lista_precos.push(precoCompra);
+        }
+
+    }
+
+    var relatorio_estoque = [];
+
+    function pesquisa() {
+
+        var nomeProduto = ipt_nomeproduto.value;
+        var precoCompra = ipt_precocompra.value;
+
+        var precoVenda = precoCompra / 25 * 100
+
+        var vezes = 0
+
+        for (var contador = 0; contador < lista_nomes.length; contador++) {
+            var nome_atual = lista_nomes[contador];
+            var preco_atual = lista_precos[contador];
+            var preco_venda = preco_atual * (125 / 100);
+
+            div_men.innerHTML += `<br>
+                Produto ${contador + 1}: ${nome_atual}:  
+                <br>Preço de Compra: R$${preco_atual}. Vender por R${preco_venda}<br><br>
+            `
+        }
+    }
+
+
+
+
+</script>

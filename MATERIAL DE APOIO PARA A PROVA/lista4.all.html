@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 04 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Idade e Festa -->
+<h3>Exercício 1</h3>
+Idade:
+<input type="number" id="idade_usuario"><br>
+<button onclick="irPraFesta()">Ir pra festa</button>
+
+<script>
+function irPraFesta() {
+    var idade = Number(idade_usuario.value);
+    if (idade < 18) {
+        alert("Pedir permissão pro responsável!");
+    }
+    alert("#partiuFesta");
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Consumo de Refrigerante -->
+<h3>Exercício 2</h3>
+Quantas latinhas de refrigerante você toma por dia?
+<input type="text" id="latinhas_tomadas">
+<button onclick="quantidadeRefrigerante()">Quantos refris?</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function quantidadeRefrigerante() {
+    var latinhas = Number(latinhas_tomadas.value);
+    var totalRefrigerante = latinhas * 365;
+    resultado_ex2.innerHTML = "Você consome " + totalRefrigerante + " latinhas por ano!";
+    if (totalRefrigerante >= 500) {
+        resultado_ex2.innerHTML += "<br>Cuidado com a diabetes!";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Média das Notas -->
+<h3>Exercício 3</h3>
+Nota 1:
+<input type="number" id="nota1_ex3"><br>
+Nota 2:
+<input type="number" id="nota2_ex3"><br>
+Nota 3:
+<input type="number" id="nota3_ex3"><br>
+<button onclick="analisarDesempenho()">Analisar desempenho</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function analisarDesempenho() {
+    var nota1 = Number(nota1_ex3.value);
+    var nota2 = Number(nota2_ex3.value);
+    var nota3 = Number(nota3_ex3.value);
+    var media = (nota1 + nota2 + nota3) / 3;
+    resultado_ex3.innerHTML = "Sua média foi de " + media.toFixed(2);
+    if (media > 9.4) {
+        resultado_ex3.innerHTML += "<br>Parabéns, você é fora de série!";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Custo da Pizza -->
+<h3>Exercício 4</h3>
+Valor da pizza:
+<input type="number" id="valor_pizza"><br>
+Quantidade de amigos:
+<input type="number" id="quantidade_amigos"><br>
+<button onclick="rolarPizza()">Rola a pizza?</button>
+<div id="resultado_ex4"></div>
+
+<script>
+function rolarPizza() {
+    var valor = Number(valor_pizza.value);
+    var amigos = Number(quantidade_amigos.value);
+    var valorPorAmigo = valor / amigos;
+    resultado_ex4.innerHTML = "Cada amigo vai pagar R$" + valorPorAmigo.toFixed(2);
+    if (valorPorAmigo > 20) {
+        resultado_ex4.innerHTML += "<br><span style='color:red; font-weight:bold;'>Deu ruim! Pizza muito cara!</span>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 5 - Cálculo da Conta de Luz -->
+<h3>Exercício 5</h3>
+Quantidade de KWh consumida no mês:
+<input type="number" id="quantidade_luz"><br>
+<button onclick="calcularContaLuz()">Calcular conta de luz</button>
+
+<script>
+function calcularContaLuz() {
+    var consumo = Number(quantidade_luz.value);
+    var valorConta = consumo * 0.85;
+    if (consumo < 100) {
+        valorConta *= 0.9; // Aplica desconto de 10%
+    }
+    alert("O valor da conta a ser paga é: R$" + valorConta.toFixed(2));
+}
+</script>
+
+<!-- EXERCÍCIO 6 - Verificação de Renda Familiar -->
+<h3>Exercício 6</h3>
+Valor da renda familiar:
+<input type="number" id="renda_familiar"><br>
+Valor da prestação:
+<input type="number" id="prestacao"><br>
+<button onclick="verificarFinanciamento()">Verificar financiamento</button>
+<div id="resultado_ex6"></div>
+
+<script>
+function verificarFinanciamento() {
+    var renda = Number(renda_familiar.value);
+    var prestacao = Number(prestacao.value);
+    var percentual = (prestacao / renda) * 100;
+    resultado_ex6.innerHTML = "A prestação corresponde a " + percentual.toFixed(2) + "% da renda familiar";
+    if (percentual > 30) {
+        resultado_ex6.innerHTML += "<br><span style='color:red; font-weight:bold;'>Será necessário complementar a renda familiar</span>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 7 - Controle do Cheque Especial -->
+<h3>Exercício 7</h3>
+Saldo da conta:
+<input type="number" id="saldo_conta"><br>
+Débito:
+<input type="number" id="debito"><br>
+<button onclick="analisarConta()">Analisar conta</button>
+<div id="resultado_ex7"></div>
+
+<script>
+function analisarConta() {
+    var saldo = Number(saldo_conta.value);
+    var debito = Number(debito.value);
+    var novoSaldo = saldo - debito;
+    resultado_ex7.innerHTML = "O saldo atual da conta corrente é " + novoSaldo.toFixed(2);
+    if (novoSaldo < 0) {
+        resultado_ex7.innerHTML = "<span style='color:red; font-weight:bold;'>" + resultado_ex7.innerHTML + "</span>";
+    } else if (novoSaldo === 0) {
+        resultado_ex7.innerHTML = "<span style='color:blue; font-style:italic;'>" + resultado_ex7.innerHTML + "</span>";
+    } else {
+        resultado_ex7.innerHTML = "<span style='color:blue; font-style:italic;'>" + resultado_ex7.innerHTML + "</span>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 8 - Controle de Peso no Elevador -->
+<h3>Exercício 8</h3>
+Quantidade de homens:
+<input type="number" id="quantidade_homens"><br>
+Quantidade de mulheres:
+<input type="number" id="quantidade_mulheres"><br>
+<button onclick="analisarPeso()">Analisar peso</button>
+<div id="resultado_ex8"></div>
+
+<script>
+function analisarPeso() {
+    var homens = Number(quantidade_homens.value);
+    var mulheres = Number(quantidade_mulheres.value);
+    var pesoEstimado = (homens * 80) + (mulheres * 60);
+    resultado_ex8.innerHTML = "Este elevador suporta 800 Kg e o peso estimado desta lotação é de " + pesoEstimado + " kg";
+    if (pesoEstimado > 800) {
+        resultado_ex8.innerHTML += "<br><span style='color:blue;'>Será necessário que alguém desça para que o elevador se movimente</span>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 9 - Consumo de Streaming -->
+<h3>Exercício 9</h3>
+Última série assistida:
+<input type="text" id="serie"><br>
+Total de episódios assistidos:
+<input type="number" id="episodios"><br>
+<button onclick="verificarNivel()">Verificar nível</button>
+<div id="resultado_ex9"></div>
+
+<script>
+function verificarNivel() {
+    var serie = serie.value;
+    var episodios = Number(episodios.value);
+    var tempoTotal = episodios * 22; // 22 minutos por episódio
+    var horasGastas = tempoTotal / 60; // converte minutos em horas
+    resultado_ex9.innerHTML = "Vejo que você gosta da série " + serie;
+    if (horasGastas > 30) {
+        resultado_ex9.innerHTML += "<br>Uau, você realmente gosta dessa série!";
+    }
+}
+</script>
+
+</body>
+</html>

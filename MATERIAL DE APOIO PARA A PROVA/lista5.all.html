@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 05 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Análise de Estatura -->
+<h3>Exercício 1</h3>
+Altura do usuário:
+<input type="number" id="altura_usuario"><br><br>
+<button onclick="analisarEstatura()">Analisar Estatura</button>
+<div id="resultado_ex1"></div>
+
+<script>
+function analisarEstatura() {
+    var altura = Number(altura_usuario.value);
+    if (altura <= 1.65) {
+        resultado_ex1.innerHTML = "Você pode ser piloto de corrida";
+    } else if (altura <= 1.80) {
+        resultado_ex1.innerHTML = "Você pode ser jogador de futebol";
+    } else {
+        resultado_ex1.innerHTML = "Você pode ser jogador de vôlei ou basquete";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Classe Social -->
+<h3>Exercício 2</h3>
+Renda familiar mensal:
+<input type="number" id="renda_familiar"><br><br>
+<button onclick="analisarRenda()">Analisar Renda</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function analisarRenda() {
+    var renda = Number(renda_familiar.value);
+    if (renda <= 250) {
+        resultado_ex2.innerHTML = "Classe E";
+    } else if (renda <= 900) {
+        resultado_ex2.innerHTML = "Classe D";
+    } else if (renda <= 2500) {
+        resultado_ex2.innerHTML = "Classe C";
+    } else if (renda <= 9500) {
+        resultado_ex2.innerHTML = "Classe B";
+    } else {
+        resultado_ex2.innerHTML = "Classe A";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Temperatura -->
+<h3>Exercício 3</h3>
+Temperatura:
+<input type="number" id="temperatura"><br><br>
+<button onclick="analisarTemperatura()">Verificar clima</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function analisarTemperatura() {
+    var temp = Number(temperatura.value);
+    if (temp < 14) {
+        resultado_ex3.innerHTML = "Congelante";
+    } else if (temp <= 21) {
+        resultado_ex3.innerHTML = "Com Frio";
+    } else if (temp <= 24) {
+        resultado_ex3.innerHTML = "Confortável";
+    } else if (temp <= 31) {
+        resultado_ex3.innerHTML = "Com Calor";
+    } else {
+        resultado_ex3.innerHTML = "Calor escaldante";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Peso de Crianças -->
+<h3>Exercício 4</h3>
+Peso da criança:
+<input type="number" id="peso_crianca"><br><br>
+<button onclick="avaliarPeso()">Avaliar peso</button>
+<div id="resultado_ex4"></div>
+
+<script>
+function avaliarPeso() {
+    var peso = Number(peso_crianca.value);
+    if (peso <= 13.5) {
+        resultado_ex4.innerHTML = "Abaixo do peso";
+    } else if (peso === 18.3) {
+        resultado_ex4.innerHTML = "Peso perfeito";
+    } else if (peso > 21.2) {
+        resultado_ex4.innerHTML = "Acima do peso";
+    } else {
+        resultado_ex4.innerHTML = "Peso na média";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 5 - Classificação do Aluno -->
+<h3>Exercício 5</h3>
+Nota do aluno:
+<input type="number" id="nota_aluno"><br><br>
+<button onclick="classificarAluno()">Classificar aluno</button>
+<div id="resultado_ex5"></div>
+
+<script>
+function classificarAluno() {
+    var nota = Number(nota_aluno.value);
+    if (nota < 5) {
+        alert("Aluno precisa de muita ajuda");
+    } else if (nota <= 7) {
+        alert("Aluno na média");
+    } else if (nota <= 9.5) {
+        alert("Aluno acima da média");
+    } else {
+        alert("Aluno fora da curva");
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 6 - Fale sobre o time -->
+<h3>Exercício 6</h3>
+Time que torce:
+<input type="text" id="time"><br><br>
+<button onclick="faleSobreTime()">Fale sobre esse time</button>
+<div id="resultado_ex6"></div>
+
+<script>
+function faleSobreTime() {
+    var timeTorcedor = time.value.toLowerCase();
+    if (timeTorcedor === "corinthians") {
+        resultado_ex6.innerHTML = "<span style='background-color:black; color:white;'>Salve o Corinthians</span>";
+    } else if (timeTorcedor === "palmeiras") {
+        resultado_ex6.innerHTML = "<span style='background-color:green; color:white;'>Salve o alviverde imponente</span>";
+    } else if (timeTorcedor === "santos") {
+        resultado_ex6.innerHTML = "<span style='background-color:white; color:black;'>Agora quem dá a bola é o Santos</span>";
+    } else if (timeTorcedor === "são paulo") {
+        resultado_ex6.innerHTML = "<span style='background-color:black; color:red;'>Salve o Tricolor paulista</span>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 7 - Consumo de Calorias -->
+<h3>Exercício 7</h3>
+Quantidade de pães franceses:
+<input type="number" id="paes"><br>
+Quantidade de bolachas recheadas:
+<input type="number" id="bolachas"><br>
+Quantidade de achocolatado:
+<input type="number" id="achocolatado"><br>
+<button onclick="verificarCalorias()">Verificar calorias</button>
+<div id="resultado_ex7"></div>
+
+<script>
+function verificarCalorias() {
+    var pães = Number(paes.value);
+    var bolachas = Number(bolachas.value);
+    var achocolatado = Number(achocolatado.value);
+    var totalCalorias = (pães * 50) + (bolachas * 80) + (achocolatado * 70);
+    
+    if (totalCalorias < 200) {
+        resultado_ex7.innerHTML = "Parabéns, vai ficar em forma!";
+    } else if (totalCalorias < 400) {
+        resultado_ex7.innerHTML = "Cuidado, vai ficar menos saudável!";
+    } else {
+        resultado_ex7.innerHTML = "Alerta crítico de saúde!!!";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 8 - Meta de Economia -->
+<h3>Exercício 8</h3>
+Meta de economia:
+<input type="number" id="meta_economia"><br>
+Valor guardado:
+<input type="number" id="valor_guardado"><br>
+<button onclick="analisarEconomia()">Analisar economia</button>
+<div id="resultado_ex8"></div>
+
+<script>
+function analisarEconomia() {
+    var meta = Number(meta_economia.value);
+    var guardado = Number(valor_guardado.value);
+    
+    if (guardado >= meta) {
+        resultado_ex8.innerHTML = "Parabéns, meta alcançada!";
+        if (guardado > meta) {
+            resultado_ex8.innerHTML += "<br>Meta ultrapassada em R$" + (guardado - meta);
+        }
+    } else {
+        resultado_ex8.innerHTML = "Força! Ainda em busca da meta! Falta R$" + (meta - guardado);
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 9 - Avaliação de Vendas -->
+<h3>Exercício 9</h3>
+Meta de vendas:
+<input type="number" id="meta_vendas"><br>
+Total de vendas:
+<input type="number" id="total_vendas"><br>
+<button onclick="analisarVendas()">Analisar Vendas</button>
+<div id="resultado_ex9"></div>
+
+<script>
+function analisarVendas() {
+    var meta = Number(meta_vendas.value);
+    var total = Number(total_vendas.value);
+    var percentual = (total / meta) * 100;
+
+    if (percentual < 100) {
+        resultado_ex9.innerHTML = "Meta não atingida, atendeu apenas " + percentual.toFixed(2) + "%";
+    } else if (percentual === 100) {
+        resultado_ex9.innerHTML = "Meta atingida, parabéns!";
+    } else {
+        resultado_ex9.innerHTML = "Meta ultrapassada! Ultrapassou em " + (percentual - 100).toFixed(2) + "%";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 10 - Conta de Energia -->
+<h3>Exercício 10</h3>
+Consumo mensal em kWh:
+<input type="number" id="consumo_kwh"><br>
+Valor por kWh:
+<input type="number" id="valor_kwh"><br>
+<button onclick="calcularConta()">Calcular Conta</button>
+<div id="resultado_ex10"></div>
+
+<script>
+function calcularConta() {
+    var consumo = Number(consumo_kwh.value);
+    var valorPorKwh = Number(valor_kwh.value);
+    var total = consumo * valorPorKwh;
+
+    if (consumo > 300) {
+        total *= 1.1; // Aplica multa de 10%
+    }
+    
+    resultado_ex10.innerHTML = "O valor da conta é R$" + total.toFixed(2);
+    
+    if (consumo <= 300) {
+        resultado_ex10.innerHTML += "<br>Gastos dentro do esperado";
+    } else if (consumo <= 500) {
+        resultado_ex10.innerHTML += "<br>Gastos excessivos, multa aplicada";
+    } else {
+        resultado_ex10.innerHTML += "<br>Economize energia, sua conta está muito alta!";
+    }
+}
+</script>
+
+</body>
+</html>

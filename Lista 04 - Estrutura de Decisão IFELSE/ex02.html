@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas latas de refrigerante você toma por dia? <input type="number" id="ipt_qtdrefri">
+    
+    <button onclick="refris()">Quantos refris?</button>
+
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+function refris(){
+    var ano = 365
+    var qtd = Number (ipt_qtdrefri.value)
+
+    var calcule = qtd * ano 
+
+    if (calcule>500){
+
+        mensagem.innerHTML = `Cuidado com a diabetes! Você consome ${calcule} latinhas por ano!`
+    } else mensagem.innerHTML = `Você consome ${calcule} latinhas por ano!`
+}
+</script>

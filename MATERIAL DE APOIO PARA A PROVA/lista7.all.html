@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 07 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Frutas -->
+<h3>Exercício 1</h3>
+Nome da fruta:
+<input type="text" id="fruta"><br><br>
+<button onclick="verFruta()">Vai comer?</button>
+<div id="resultado_ex1"></div>
+
+<script>
+function verFruta() {
+    var fruta = fruta.value;
+    if (fruta === "uva" || fruta === "abacaxi") {
+        resultado_ex1.innerHTML = "Sim, vai comer " + fruta;
+    } else {
+        resultado_ex1.innerHTML = "A fruta " + fruta + " ela não come";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Aprovado no Processo Seletivo -->
+<h3>Exercício 2</h3>
+Nota do ENEM:
+<input type="number" id="nota_enem"><br><br>
+Nota do vestibular interno:
+<input type="number" id="nota_vestibular"><br><br>
+<button onclick="avaliarAprovacao()">Avaliação</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function avaliarAprovacao() {
+    var notaEnem = Number(nota_enem.value);
+    var notaVestibular = Number(nota_vestibular.value);
+    if (notaEnem >= 800 || notaVestibular >= 700) {
+        resultado_ex2.innerHTML = "Parabéns! Aprovado";
+    } else {
+        resultado_ex2.innerHTML = "Tente semestre que vem!";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Ajuda Emergencial -->
+<h3>Exercício 3</h3>
+Renda individual:
+<input type="number" id="renda_individual"><br><br>
+Renda familiar:
+<input type="number" id="renda_familiar"><br><br>
+<button onclick="verificarAjuda()">Terei o benefício</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function verificarAjuda() {
+    var rendaIndividual = Number(renda_individual.value);
+    var rendaFamiliar = Number(renda_familiar.value);
+    if (rendaIndividual <= 2000 || rendaFamiliar <= 3000) {
+        resultado_ex3.innerHTML = "Você terá direito ao auxílio";
+    } else {
+        resultado_ex3.innerHTML = "Sem direito ao auxílio";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Avaliação de Pagamento -->
+<h3>Exercício 4</h3>
+Método de pagamento:
+<input type="text" id="metodo_pagamento"><br><br>
+<button onclick="avaliarPagamento()">Analisar compra</button>
+<div id="resultado_ex4"></div>
+
+<script>
+function avaliarPagamento() {
+    var metodo = metodo_pagamento.value.toLowerCase();
+    if (metodo === "dinheiro" || metodo === "cartão de débito") {
+        resultado_ex4.innerHTML = "Você terá que pagar à vista";
+    } else if (metodo === "cartão de crédito" || metodo === "boleto") {
+        resultado_ex4.innerHTML = "Pagamento poderá ser parcelado";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 5 - Alerta de Desconforto -->
+<h3>Exercício 5</h3>
+Temperatura atual:
+<input type="number" id="temperatura"><br><br>
+<button onclick="analisarClima()">Analisar clima</button>
+<div id="resultado_ex5"></div>
+
+<script>
+function analisarClima() {
+    var temperatura = Number(temperatura.value);
+    if (temperatura < 21 || temperatura > 24) {
+        resultado_ex5.innerHTML = "Alerta de desconforto!";
+        if (temperatura < 21) {
+            resultado_ex5.innerHTML += "<br>As pessoas vão ter hipotermia";
+        } else {
+            resultado_ex5.innerHTML += "<br>As pessoas vão derreter";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 6 - Cansaço do Aluno -->
+<h3>Exercício 6</h3>
+<h4>Calculadora de cansaço do aluno SPTech</h4>
+Meio de transporte:
+<input type="text" id="transporte"><br><br>
+<button onclick="calcularCansaco()">Calcular cansaço</button>
+<div id="resultado_ex6"></div>
+
+<script>
+function calcularCansaco() {
+    var meioTransporte = transporte.value.toLowerCase();
+    if (meioTransporte === "carro" || meioTransporte === "uber") {
+        resultado_ex6.innerHTML = "Tá tranquilo...";
+    } else if (meioTransporte === "métro" || meioTransporte === "ônibus") {
+        resultado_ex6.innerHTML = "Um pouco cansado";
+    } else if (meioTransporte === "bicicleta") {
+        resultado_ex6.innerHTML = "Vish... vive cansado.";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 7 - Análise de ajuda -->
+<h3>Exercício 7</h3>
+Nome da empresa:
+<input type="text" id="nome_empresa"><br><br>
+Bolsa da empresa:
+<input type="number" id="bolsa_empresa"><br><br>
+VR da empresa:
+<input type="number" id="vr_empresa"><br><br>
+Tempo de deslocamento (min):
+<input type="number" id="tempo_deslocamento"><br><br>
+<button onclick="verificarPreferencia()">É preferida?</button>
+<div id="resultado_ex7"></div>
+
+<script>
+function verificarPreferencia() {
+    var nome = nome_empresa.value;
+    var bolsa = Number(bolsa_empresa.value);
+    var vr = Number(vr_empresa.value);
+    var tempo = Number(tempo_deslocamento.value);
+    
+    if (bolsa >= 1800 || vr >= 20 || tempo <= 30) {
+        resultado_ex7.innerHTML = "A empresa " + nome + " é uma de suas preferências";
+    } else {
+        resultado_ex7.innerHTML = "A empresa " + nome + " está fora da sua lista";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 8 - Avaliação de TV -->
+<h3>Exercício 8</h3>
+Marca da TV:
+<input type="text" id="marca_tv"><br><br>
+Preço da TV:
+<input type="number" id="preco_tv"><br><br>
+<button onclick="analisarCompraTV()">Analisar compra</button>
+<div id="resultado_ex8"></div>
+
+<script>
+function analisarCompraTV() {
+    var marca = marca_tv.value.toLowerCase();
+    var preco = Number(preco_tv.value);
+
+    if (preco < 800 || preco > 2000) {
+        resultado_ex8.innerHTML = "TV fora da faixa de preço";
+        if (preco < 800) {
+            resultado_ex8.innerHTML += "<br>Preço baixo demais!";
+        } else {
+            resultado_ex8.innerHTML += "<br>TV cara demais, infelizmente";
+        }
+    } else if (marca === "mondial" || marca === "britânia") {
+        resultado_ex8.innerHTML = "Na faixa de preço, porém marca não confiável";
+    } else {
+        resultado_ex8.innerHTML = "Essa TV pode entrar na sua lista!";
+    }
+}
+</script>
+
+</body>
+</html>

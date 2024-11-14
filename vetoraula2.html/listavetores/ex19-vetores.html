@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Seus filmes favoritos da vida: <br><input type="text" id="ipt_filmesfavs">
+    <br> <button onclick="cadastrar()">Cadastrar</button><br>
+    <br> <button onclick="exibirlista()">Exibir Lista de filmes</button> <br>
+    De:
+   <br> <input type="text" id="ipt_de"> <br>
+    Até:
+   <br> <input type="text" id="ipt_ate"> <br>
+    <br><button onclick="filtrar()">Filtrar filmes</button> <br>
+    <div id="div_men"></div>
+</body>
+
+</html>
+<script>
+
+    var listaFilmes = [];
+    var contador = 0
+
+    function cadastrar() {
+        var filmes = ipt_filme.value;
+        listaFilmes.push(filmes);
+        contador++
+    }
+
+    function exibirlista() {
+        var tamanho = listaFilmes.length;
+        var mensagem = `Você já assistiu ${contador} filmes na vida!`;
+
+
+        for (var index = tamanho - 1; index >= 0; index--) {
+            var filmeAtual1 = listaFilmes[index];
+
+            mensagem += `${index + 1}º Filme:${filmeAtual1}`;
+        }
+
+        div_men.innerHTML = mensagem;
+    }
+
+    function filtrar() {
+
+        var de = Number(ipt_de.value) - 1;
+        var ate = Number(ipt_ate.value);
+        var mensagem = ``
+
+        for (ate; ate > de; ate--) {
+            var filmeAtual2 = listaFilmes[ate]
+            mensagem += `${ate}º Filme:${filmeAtual2}`
+        }
+        div_men.innerHTML = mensagem
+    }
+
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex10Aula02</title>
+</head>
+<body>
+
+    Candidato do mal: <input type= "number" id="input_Qtd_votos17">
+    <br>
+    <br>
+    Candidato do bem: <input type="number" id="input_Qtd_votos13">
+    <br>
+    <br>
+    Votos Nulos(inuteis): <input type="number" id="input_Qtd_inuteis">
+    <br>
+    <br>
+    Votos Brancos(brancos): <input type="number" id="input_Qtd_brancos">
+    <br>
+    <br>
+
+    <button onclick= "Resultado()">Resultado da Eleição</button>
+<br>
+<br>
+    <div id="div_mensagem"> Total de Votos </div>
+
+</body>
+
+
+<script>
+
+        function Resultado() {
+            var mal = Number(input_Qtd_votos17.value)
+            var bem = Number(input_Qtd_votos13.value)
+            var invalido = Number (input_Qtd_inuteis.value) + Number (input_Qtd_brancos.value)
+            var TotaldeVotos = mal + bem + invalido
+            var PorcentagemMal= mal / TotaldeVotos * 100
+            var PorcentagemBem = bem / TotaldeVotos * 100
+            var PorcentagemInvalidos = invalido / TotaldeVotos * 100
+
+            div_mensagem.innerHTML = 
+            `TOTAL DE VOTOS: ${TotaldeVotos}
+            <br> 
+            <br>
+            Candidato do bem: ${PorcentagemBem}% (${bem}) 
+            <br>
+            Candidato do mal: ${PorcentagemMal}% (${mal}) 
+
+            <br>
+            <br>
+            Votos Invalidos: ${PorcentagemInvalidos}% (${invalido})`
+
+        }
+
+    
+
+</script>
+
+
+</html>

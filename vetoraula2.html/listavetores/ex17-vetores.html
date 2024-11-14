@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h1>ANIL OSAG</h1>
+
+    <h3>ENTRADAS</h3>
+
+    PRODUTO COMPRADO: <input type="text" id="ipt_prodCompra"><br>
+    Quantidade comprada: <input type="text" id="ipt_qtdCompra"><br>
+
+    <button onclick="registrarIn()">Registrar Compra</button><br>
+
+    <div id="div_compra"></div>
+
+    <h3>SAÍDAS</h3>
+
+    PRODUTO VENDIDO: <input type="text" id="ipt_prodVend"><br>
+    Quantidade vendida: <input type="text" id="ipt_qtdVend"><br>
+
+    <button onclick="registrarOut()">Registrar saída</button><br>
+
+    <div id="div_venda"></div>
+
+    <button onclick="saldo()">Veja o Saldo do Estoque</button>
+
+    <div id="div_saldoVenda"></div>
+    <div id="div_saldoCompra"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    var listaCompra = [];
+    var listaQtdCompra = [];
+
+
+    var listaVenda = [];
+    var listaQtdVenda = [];
+
+    function registrarIn() {
+
+        var produtoCompra = ipt_prodCompra.value;
+        listaCompra.push(produtoCompra);
+
+        var qtdProdutoCompra = Number(ipt_qtdCompra.value);
+        listaQtdCompra.push(qtdProdutoCompra);
+
+        div_compra.innerHTML = `<br>Compra de ${qtdProdutoCompra} ${produtoCompra} foi registrada!<br>`
+    }
+
+    function registrarOut() {
+        var produtoVenda = ipt_prodVend.value;
+        var qtdProdutoVenda = Number(ipt_qtdVend.value);
+
+        if (listaCompra.includes(produtoVenda)) {
+            listaVenda.push(produtoVenda);
+            listaQtdVenda.push(qtdProdutoVenda);
+            div_saldoVenda.innerHTML = `<br>Venda de ${qtdProdutoVenda} ${produtoVenda} foi registrada!<br>`
+        } else {
+            div_saldoVenda.innerHTML = `${produtoVenda} não foi registrado na sua lista de entradas!`
+        }
+    }
+
+    function saldo() {
+        var mensagem2 = ``
+
+        for (var contador2 = 0; contador2 < listaVenda.length; contador2++) {
+            var produto_atual_vend = listaVenda[contador2];
+            var qtd_atual_vend = listaQtdVenda[contador2];
+            mensagem2 += `Produto:${produto_atual_vend}<br>Qtd:${qtd_atual_vend}<br>`
+        }
+
+        div_saldoCompra.innerHTML = mensagem2
+
+        var mensagem = ``
+
+        for (var contador = 0; contador < listaCompra.length; contador++) {
+            var produtoAtualCompra = listaCompra[contador];
+            var qtdAtualCompra = listaQtdCompra[contador];
+            mensagem +=
+                `<br>Produto:${produtoAtualCompra}<br>Qtd:${qtdAtualCompra}<br>`;
+        }
+        div_saldoVenda.innerHTML = mensagem;
+
+
+    }
+</script>

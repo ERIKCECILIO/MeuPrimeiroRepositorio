@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elseifAula01Ex09</title>
+</head>
+
+<body>
+    Meta de Vendas: <input type="number" id="ipt_meta"><BR></BR>
+    Total de Vendas: <input type="number" id="ipt_total_vendas"><br><br>
+
+    <button onclick="analisar()">Analisar suas vendas!</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+
+
+    function analisar() {
+
+        var meta = Number(ipt_meta.value);
+        var totalvendas = Number(ipt_total_vendas.value);
+
+        var percentual = (totalvendas / meta) * 100;
+
+
+        if (totalvendas < meta) {
+            div_mensagem.innerHTML = `Meta não atingida, atendeu apenas ${percentual}%`
+
+        } else if (totalvendas == meta) {
+            div_mensagem.innerHTML = `Meta atingida, parabéns!`
+
+        } else if (totalvendas > meta) { div_mensagem.innerHTML = `Meta ultrapassada! Ultrapassou em ${percentual}%` }
+
+    }
+</script>

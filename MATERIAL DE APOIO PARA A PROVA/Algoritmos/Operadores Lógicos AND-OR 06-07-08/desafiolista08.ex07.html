@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <H1>Acesse o Portal SPTech / Algoritmos</H1>
+
+    Login:
+    <input type="text" id="ipt_log"> <br><br>
+    Senha:
+    <input type="text" id="ipt_pass"> <br><br>
+
+    Informação pessoal:
+    <input type="text" id="ipt_info"> <br><br>
+
+    <button onclick="verificar()">Autenticar</button>
+
+    <div id="div_men"></div>
+
+</body>
+
+</html>
+
+<script>
+    var login = ipt_log.value
+    var senha = ipt_pass.value
+    var info = ipt_info.value
+
+    var tentativas = 3
+    var block = false
+
+    var valor = ""
+
+
+    function verificar() {
+
+        var login = ipt_log.value
+        var senha = ipt_pass.value
+        var info = ipt_info.value
+
+        var valor = (login == 'ana' && senha == 'braga' && (info == "1949" || info == "louro josé"))
+
+        if (block) {
+
+
+            div_men.innerHTML = "USUÁRIO BLOQUEADO! Procure seu gerente!"
+            return
+        }
+        if (valor) {
+            div_men.innerHTML = "Usuário autenticado!"
+            tentativas = 3
+        } else {
+            tentativas--
+
+            if (tentativas > 0) {
+
+                div_men.innerHTML = "Falha na autenticação. Você ainda tem " + tentativas + " tentativas."
+            } else {
+                div_men.innerHTML = "USUÁRIO BLOQUEADO! Procure seu gerente!"
+                bloqueio = true
+            }
+        }
+    }
+</script>

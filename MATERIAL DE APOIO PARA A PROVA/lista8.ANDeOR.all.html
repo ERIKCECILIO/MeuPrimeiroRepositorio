@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 08 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Avaliação de Atendimento -->
+<h3>Exercício 1</h3>
+Nota do atendimento:
+<input type="number" id="nota_atendimento"><br><br>
+<button onclick="avaliarAtendimento()">Avaliar atendimento</button>
+<div id="resultado_ex1"></div>
+
+<script>
+function avaliarAtendimento() {
+    var nota = Number(nota_atendimento.value);
+    if (nota < 0 || nota > 10) {
+        resultado_ex1.innerHTML = "Nota inválida";
+    } else if (nota < 5) {
+        resultado_ex1.innerHTML = "Não aprovado";
+    } else if (nota >= 5 && nota < 6) {
+        resultado_ex1.innerHTML = "Neutro";
+    } else {
+        resultado_ex1.innerHTML = "Aprovado";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Simulador de Tinder -->
+<h3>Exercício 2</h3>
+Altura da pessoa:
+<input type="number" id="altura"><br><br>
+Cor do cabelo:
+<input type="text" id="cor_cabelo"><br><br>
+<button onclick="verificarMatch()">Deu match?</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function verificarMatch() {
+    var altura = Number(altura.value);
+    var corCabelo = cor_cabelo.value.toLowerCase();
+    
+    if (altura < 1.85 && (corCabelo === "castanho" || corCabelo === "loiro")) {
+        resultado_ex2.innerHTML = "<img src='happy_image.jpg' alt='Feliz'>";
+    } else {
+        resultado_ex2.innerHTML = "<img src='sad_image.jpg' alt='Decepcionado'>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Simulador de Preço de Passagem -->
+<h3>Exercício 3</h3>
+Tipo de passageiro:
+<select id="tipo_passageiro">
+    <option value="comum">Comum</option>
+    <option value="estudante">Estudante</option>
+    <option value="idoso">Idoso/PNE</option>
+</select><br><br>
+Tipo de passagem:
+<select id="tipo_passagem">
+    <option value="unica">Passagem única</option>
+    <option value="integracao">Passagem integração</option>
+</select><br><br>
+<button onclick="simularPreco()">Simular preço</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function simularPreco() {
+    var tipoPassageiro = tipo_passageiro.value;
+    var tipoPassagem = tipo_passagem.value;
+    var preco;
+
+    if (tipoPassagem === "unica") {
+        preco = 4.40;
+    } else {
+        preco = 5.90;
+    }
+
+    if (tipoPassageiro === "estudante") {
+        preco *= 0.5; // 50% de desconto
+    } else if (tipoPassageiro === "idoso") {
+        preco = 0; // Gratuito
+    }
+
+    resultado_ex3.innerHTML = "Valor da passagem escolhida: R$" + preco.toFixed(2);
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Autenticação -->
+<h3>Exercício 4</h3>
+Login:
+<input type="text" id="login"><br><br>
+Senha:
+<input type="password" id="senha"><br><br>
+Informação pessoal:
+<input type="text" id="info_pessoal"><br><br>
+<button onclick="autenticar()">Autenticar</button>
+<div id="resultado_ex4"></div>
+
+<script>
+function autenticar() {
+    var login = login.value;
+    var senha = senha.value;
+    var infoPessoal = info_pessoal.value;
+
+    if (login === "ana" && senha === "braga" && (infoPessoal === "1949" || infoPessoal === "louro josé")) {
+        resultado_ex4.innerHTML = "Usuário autenticado";
+    } else {
+        resultado_ex4.innerHTML = "Falha na autenticação";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 5 - Avaliação do Clima -->
+<h3>Exercício 5</h3>
+Temperatura:
+<input type="number" id="temperatura_clima"><br><br>
+Umidade:
+<input type="number" id="umidade"><br><br>
+<button onclick="avaliarClima()">Avaliar clima</button>
+<div id="resultado_ex5"></div>
+
+<script>
+function avaliarClima() {
+    var temperatura = Number(temperatura_clima.value);
+    var umidade = Number(umidade.value);
+
+    if (umidade < 0 || umidade > 100) {
+        alert("Valor de umidade inválido");
+        resultado_ex5.innerHTML = "";
+        return; // Para sair da função se a umidade for inválida
+    }
+
+    if (temperatura >= 22 && temperatura <= 23 && umidade < 60) {
+        resultado_ex5.innerHTML = "Clima agradável";
+    } else {
+        resultado_ex5.innerHTML = "Clima desconfortável";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 6 - Avaliação de Aluno -->
+<h3>Exercício 6</h3>
+Nota do aluno:
+<input type="number" id="nota_aluno"><br><br>
+Frequência do aluno:
+<input type="number" id="frequencia_aluno"><br><br>
+<button onclick="avaliarAluno()">Analisar aluno</button>
+<div id="resultado_ex6"></div>
+
+<script>
+function avaliarAluno() {
+    var nota = Number(nota_aluno.value);
+    var frequencia = Number(frequencia_aluno.value);
+
+    if (nota < 0 || nota > 10) {
+        alert("Onde já se viu nota <0 ou >10?!");
+        resultado_ex6.innerHTML = "";
+        return; // Para sair da função se a nota for inválida
+    }
+
+    if (frequencia < 0 || frequencia > 100) {
+        alert("Onde já se viu frequência <0 ou >100?!");
+        resultado_ex6.innerHTML = "";
+        return; // Para sair da função se a frequência for inválida
+    }
+
+    if (nota < 6) {
+        resultado_ex6.innerHTML = "Aluno ficou abaixo da média";
+    } else if (nota < 8.5) {
+        resultado_ex6.innerHTML = "Aluno ficou na média";
+    } else {
+        resultado_ex6.innerHTML = "Aluno acima da média";
+    }
+}
+</script>
+
+</body>
+</html>

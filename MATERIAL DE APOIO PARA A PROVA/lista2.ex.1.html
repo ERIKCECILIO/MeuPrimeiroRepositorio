@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 02 - Introdução a JS</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Cidade Natal e Ano de Nascimento -->
+<h3>Exercício 1</h3>
+Cidade Natal:
+<input type="text" id="cidade_natal"><br>
+Ano de Nascimento:
+<input type="text" id="ano_nascimento"><br>
+<button onclick="cadastrar()">Cadastrar</button>
+<p id="resultado_ex1"></p>
+
+<script>
+function cadastrar() {
+    var cidade = cidade_natal.value;
+    var ano = ano_nascimento.value;
+    resultado_ex1.innerHTML = "Você nasceu na cidade de " + cidade + " em " + ano;
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Peso e Altura -->
+<h3>Exercício 2</h3>
+Peso:
+<input type="text" id="peso"><br>
+Altura:
+<input type="text" id="altura"><br>
+<button onclick="faleComigo()">Fale comigo</button>
+<p id="resultado_ex2"></p>
+
+<script>
+function faleComigo() {
+    var peso = peso.value;
+    var altura = altura.value;
+    resultado_ex2.innerHTML = "Você pesa " + peso + " e tem " + altura + " de altura";
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Nome do time e Títulos -->
+<h3>Exercício 3</h3>
+Nome do time:
+<input type="text" id="time"><br>
+Quantidade de títulos:
+<input type="text" id="titulos"><br>
+<button onclick="amoMeuTime()">Amo meu time</button>
+<p id="resultado_ex3"></p>
+
+<script>
+function amoMeuTime() {
+    var time = time.value;
+    var titulos = titulos.value;
+    resultado_ex3.innerHTML = "O time " + time + " tem " + titulos + " títulos";
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Logradouro e Número da Casa -->
+<h3>Exercício 4</h3>
+Nome da Rua/Avenida/Vila:
+<input type="text" id="logradouro"><br>
+Número da Casa:
+<input type="text" id="numero"><br>
+<button onclick="ondeEuMoro()">Onde eu moro</button>
+<p id="resultado_ex4"></p>
+
+<script>
+function ondeEuMoro() {
+    var logradouro = logradouro.value;
+    var numero = numero.value;
+    resultado_ex4.innerHTML = "Seu logradouro é " + logradouro + "<br>" +
+        "O número do seu logradouro é " + numero;
+}
+</script>
+
+</body>
+</html>

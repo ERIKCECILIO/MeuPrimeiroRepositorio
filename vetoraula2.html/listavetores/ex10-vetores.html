@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Grave sua linha de busão: <input type="text" id="ipt_buslinha"><br><br>
+    Pesquisar linha de busão: <input type="text" id="ipt_pesquisar"><br><br>
+    <button onclick="gravar()">Gravar</button><br><br>
+    <button onclick="pesquisar()">Pesquisar</button><br><br>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    var lista_busao = [];
+
+
+    function gravar() {
+        var mensagem = ""
+        var bus = ipt_buslinha.value;
+
+
+        if (bus != "") {
+            lista_busao.push(bus)
+
+            for (var contador = lista_busao.length - 1; contador >= 0; contador--) {
+                mensagem += `<br>${lista_busao[contador]}<br>`
+            }
+
+        }
+        div_mensagem.innerHTML = mensagem
+
+
+    }
+
+    var linhaEncontrada = [];
+
+    function pesquisar() {
+        var pesquisa = ipt_pesquisar.value;
+        var vezes = 0
+
+        for (var contador = 0; contador < lista_busao.length; contador++) {
+            if (pesquisa == lista_busao[contador]) {
+                vezes++
+                linhaEncontrada.push(contador + 1)
+            }
+        }
+        if (vezes > 0) {
+            div_mensagem.innerHTML = `Você já pegou essa linha ${vezes} vezes, nessa ordem ${linhaEncontrada}`
+        }
+
+        else {
+            div_mensagem.innerHTML = `Você nunca pegou essa linha`
+        }
+    }
+
+
+
+
+
+
+</script>

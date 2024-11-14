@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Renda familiar: <input type="number" id="ipt_renda">
+    Valor da Prestação: <input type="number" id="ipt_valor">
+
+
+<button onclick="verificar()">Verificar Financiamento</button>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+
+        var renda = Number(ipt_renda.value)
+        var valor = Number(ipt_valor.value)
+
+        var divisor = valor / renda
+
+        
+
+        mensagem.innerHTML = `A prestação corresponde a ${prestacao.toFixed(2)}% da renda familiar`
+        
+        if(dividir>30){
+            mensagem.innerHTML += `"Será necessário complementar a renda familiar" `
+        }
+    }
+</script>

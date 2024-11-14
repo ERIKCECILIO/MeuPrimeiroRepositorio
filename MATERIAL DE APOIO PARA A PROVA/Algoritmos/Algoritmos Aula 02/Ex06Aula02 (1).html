@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Numero 1: <input type="number1" id="input_n1">
+    <br>
+    Numero 2: <input type="number2" id="input_n2">
+    <br>
+
+    <button onclick= "soma()">Calcule a soma!</button>
+    <div id="div_mensagem"></div>
+    <button onclick= "subtracao()">Calcule a subtração!</button>
+    <div id="div_mensagem"></div>
+    <button onclick= "multiplicacao()">Calcule a multiplicação!</button>
+    <div id="div_mensagem"></div>
+    <button onclick= "divisao()">Calcule a divisão!</button>
+    <div id="div_mensagem"></div>
+
+</body>
+<script>
+
+    function soma() {
+        var number1 = Number(input_n1.value);
+        var number2 = Number(input_n2.value);
+        var calcule = number1 + number2
+
+        alert('A soma será de ' + calcule); }
+    
+    function subtracao() {
+        var number1 = Number(input_n1.value);
+        var number2 = Number(input_n2.value);
+        var calcule = number1 - number2
+
+        alert('A diferença será de ' + calcule); }
+
+    function multiplicacao() {
+        var number1 = Number(input_n1.value);
+        var number2 = Number(input_n2.value);
+        var calcule = number1 * number2;
+
+        alert('A multiplicação de ' + number1 + ' e ' + number2 + ' é ' + calcule); }
+    
+    function divisao() {
+        var number1 = Number(input_n1.value);
+        var number2 = Number(input_n2.value);
+        var calcule = number1 / number2;
+    
+        alert('A divisão de ' + number1 + ' por ' + number2 + ' é ' + calcule); }
+    
+
+</script>
+</html>

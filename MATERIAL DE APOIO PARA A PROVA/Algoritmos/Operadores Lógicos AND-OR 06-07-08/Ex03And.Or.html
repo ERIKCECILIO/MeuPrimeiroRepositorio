@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03And.Or</title>
+</head>
+
+<body>
+    <h1>Simulador de Preço da Passagem de Ônibus, São Paulo</h1><br><br>
+
+    Qual é o seu tipo de bilhete?
+    <select id="ipt_bilhete_unico">
+
+        <option value="comum">Comum</option>
+        <option value="estudante">Estudante</option>
+        <option value="idoso">Idoso/PNE</option>
+
+    </select>
+    <br><br><br>
+
+    Escolha o tipo de passagem:
+    <select id="ipt_passagem">
+        <option value="única">Passagem Unitária</option>
+        <option value="integração">Passagem c/ Integração</option>
+    </select> <br> <br>
+
+    Tipo de Passagem (UNICA / INTEGRAÇÃO):
+
+    <button onclick="simular()">Simular Preço!</button>
+
+    <div id="div_m"></div>
+
+</body>
+
+</html>
+<script>
+
+
+
+    function simular() {
+
+        var bilhete = (ipt_bilhete_unico.value);
+        var passagem = (ipt_passagem.value);
+        var integrada = 5.90
+        var unitaria = 4.40
+
+        var passelivre = 0
+
+        if ((bilhete == "comum" || bilhete == "estudante") && passagem == "única") {
+            if (bilhete == "comum") {
+                div_m.innerHTML = `Valor da passagem: R$ ${unitaria}`
+            } else if (bilhete == "estudante") {
+                div_m.innerHTML = `Valor da passagem: R$ ${(unitaria * 0.5)}`
+            }
+        } else if ((bilhete == "comum" || bilhete == "estudante") && passagem == "integração") {
+            if (bilhete == "comum") {
+                div_m.innerHTML = `Valor da passagem: R$ ${integrada}`
+            } else if (bilhete == "estudante") {
+                div_m.innerHTML = `Valor da passagem: R$ ${(integrada * 0.5)}`
+            }
+
+        } else if (bilhete == "idoso" && (passagem == "única" || passagem == "integração")) {
+            div_m.innerHTML = `Valor da passagem: R$ ${passelivre}`
+        }
+    }
+
+
+
+
+
+</script>

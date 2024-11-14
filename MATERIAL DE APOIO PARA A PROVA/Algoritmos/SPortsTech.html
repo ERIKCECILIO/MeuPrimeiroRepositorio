@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube de Compras da SPorTech</title>
+</head>
+
+<body>
+    <h1>Clube de Compras SPorTech</h1>
+
+    <span>
+        <h1>Cadastre-se</h1>
+
+        <input oninput="validarUser()" type="text" id="ipt_user" placeholder="User">
+        <div id="user"></div><br>
+        <input oninput="validarSenha()" type="password" id="ipt_pass" placeholder="Password">
+        <div id="senhas"></div>
+        <input oninput="validarConfirmacao()" type="password" id="ipt_confirm" placeholder="Confirme a senha">
+        <div id="conSenha"></div>
+        <br>
+        <button onclick="validarCadastroGrupo()">Cadastrar</button><br>
+        <h5>Descubra seu Clube de Desconto!</h5>
+        <div id="div_validado"></div>
+        <a href="">Já é cliente SPorTech? Faça seu login!</a>
+    </span>
+
+    </div>
+    </div>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    var grupo1ouro = (ValorTotal * 100) / 0.20
+    var grupo2prata = (ValorTotal * 100) / 0.15
+    var grupo3bronze = (ValorTotal * 100) / 0.10
+    var grupo4cobre = (ValorTotal * 100) / 0.5
+
+
+
+    var correto = true
+
+    validado.innerHTML = ""
+    function validarUser() {
+        var user = ipt_user.value
+        ipt_user.value = user
+            .includes('!')
+            .includes(' ')
+            .includes('@')
+            .includes('#')
+            .includes('$')
+            .includes('%')
+            .includes('&')
+
+
+        if (user.length >= 3) {
+            ipt_user.style.border = "3px solid #00ff00"
+        } else {
+            correto = false
+            ipt_user.style.border = "3px solid red"
+            user.innerHTML = "Nome de usuário inválido. Verifique os caracteres utilizados"
+        }
+    }
+
+
+    function validarSenha() {
+
+        var pass = ipt_pass.value
+        ipt_pass.value = pass
+            .includes('!', '')
+            .includes(' ', '')
+            .includes('@', '')
+            .includes('#', '')
+            .includes('$', '')
+            .includes('%', '')
+            .includes('&', '')
+
+        if (pass.length >= 8) {
+            pass.innerHTML = "Senha Válida"
+            ipt_pass.style.border = "3px solid #008000"
+        } else {
+            senhas.innerHTML = "A senha deve conter no mínimo 8 caracteres, com ao menos um caractere especial, uma letra maiúscula, uma letra minúscula e um número."
+            ipt_senha.style.border = "3px solid red"
+            correto = false
+        }
+
+        var texto_minusculo = texto_original.toLowerCase();
+        var texto_maiusculo = texto_original.toUpperCase();
+
+        pass.innerHTML += `Texto minusculo: ${texto_minusculo} <br>`;
+
+        pass.innerHTML += `Texto maiúsculo: ${texto_maiusculo} <br>`
+
+        if (texto_original != texto_maiusculo) {
+            pass.innerHTML += `Possui caractere minúsculo <br>`;
+        } else {
+            pass.innerHTML += `Não possui caractere minúsculo. O texto INTEIRO está em MAIÚSCULA`;
+        }
+
+        if (texto_original != texto_minusculo) {
+            pass.innerHTML += `Possui caractere maiúsculo <br>`;
+        } else {
+            pass.innerHTML += `Não possui caractere maiúsculo. <br>`;
+        }
+
+    }
+
+    function validarConfirmacao() {
+        var pass = ipt_pass.value
+        var confirmacao = ipt_confirm.value
+        if (confirmacao == pass && confirmacao.length >= 8) {
+            conSenha.innerHTML = "Senhas Válidas"
+            ipt_confirm.style.border = "3px solid #008000"
+        } else {
+            conSenha.innerHTML = "As senhas não coincidem"
+            correto = false
+            ipt_confirm.style.border = "3px solid red"
+        }
+    }
+
+    function validarCadastroGrupo() {
+
+        div_validado = ""
+        validarUser()
+        validarSenha()
+        validarConfirmacao()
+
+        if (correto == true) {
+            div_validado.innerHTML = "Informações cadastradas, clique em 'Acesse o Clube!' abaixo"
+
+            var aleatorio = Math.random();
+            var um_quatro = aleatorio * 4 + 1;
+
+            var aleatorio_inteiro = aleatorio_min_max.toFixed(0);
+
+            div_validado.innerHTML = `Clube de Desconto: ${aleatorio} <br>`;
+
+        } else {
+            div_validado.innerHTML = "Nome de usuário inválido. Verifique os caracteres utilizados"
+            correto = true
+        }
+
+    }
+
+</script>

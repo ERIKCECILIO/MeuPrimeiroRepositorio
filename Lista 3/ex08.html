@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Valor do Depósito: <input type="number" id="ipt_deposito">
+    Valor do Saque: <input type="number" id="ipt_saque">
+
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="sacar()">Sacar</button>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+    
+    var saldo = 0
+
+    function depositar() {
+        var deposito = Number (ipt_deposito.value);
+        var calcule = saldo + deposito
+
+        saldo = saldo + deposito
+
+        alert(`Depósito de R$${deposito} efetuado! Saldo atual: R$${calcule}.`)
+        mensagem.innerHTML = `Saldo atual: ${saldo}`        
+    }
+    function sacar() {
+        var saque = Number (ipt_saque.value);
+        var calcule = saldo - saque
+
+        saldo = saldo - saque
+
+        alert(`Saque de R$${saque} efetuado! Saldo atual: R$${calcule}.`)
+        mensagem.innerHTML = `Saldo atual: ${saldo}`        
+    }
+    
+</script>

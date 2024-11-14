@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="ipt_numero">
+
+    <button onclick="calcular()">Ver Divisores</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular (){
+
+        var soma = 0
+        var num = Number (ipt_numero.value)
+        var mensagem = ""
+
+        for (var contador = 0 ; contador <= num ; contador++){
+
+            if (num % contador == 0) {
+                soma++
+                mensagem += `<br>${contador}`
+            }
+
+        }
+
+        if (soma==2){
+
+            mensagem = `<br> O número ${num} é um número primo!`
+
+        }
+        div_mensagem.innerHTML = mensagem
+
+
+    }
+
+</script>

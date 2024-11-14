@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Cadastre AQUI os nomes de seus filmes favoritos: <br> <input type="text" id="ipt_filme"><br>
+
+    <br> <button onclick="cadastrar()">Cadastrar Filme</button><br>
+
+    <div id="div_men"></div>
+</body>
+
+</html>
+
+<script>
+
+
+    var lista_filmes = []
+
+
+    function cadastrar() {
+        var filmes = ipt_filme.value
+
+        lista_filmes.push(filmes)
+
+        men = `Seu filme favorito é: ${lista_filmes[0]}<br><br>`
+
+        if (lista_filmes.length >= 3) {
+
+            men += `Seu 3º filme favorito é: ${lista_filmes[2]}<br><br>`
+        } else {
+            men += 'Ainda não existe filmes aqui!<br><br>';
+        }
+        men += `Total de filmes cadastrados:  ${lista_filmes.length}`
+
+        div_men.innerHTML = men
+    }
+</script>

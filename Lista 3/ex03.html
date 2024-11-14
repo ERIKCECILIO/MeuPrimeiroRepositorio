@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Qual é o valor da passagem? <input type="number" id="ipt_valor">
+        Quantas viagens fará este mês? <input type="number" id="ipt_viagens">
+        <button onclick="calculo()">Ver Economia</button>
+</body>
+</html>
+<script>
+    function calculo(){
+        var passagem = Number.parseFloat (ipt_valor.value);
+        var qtdViagens = Number.parseFloat (ipt_viagens.value);
+        var meia = (passagem * qtdViagens) / 2
+        
+
+        alert(`Você economizará R$${meia} por mês!`)
+
+    }
+</script>

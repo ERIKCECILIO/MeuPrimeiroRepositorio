@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite um número: <input type="number" id="ipt_n1"><br><br>
+    Digite um número: <input type="number" id="ipt_n2"><br><br>
+
+    <button onclick="soma()">Soma</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multi()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+
+    <div id="mensagem"></div>
+</body>
+
+</html>
+<script>
+
+    function soma() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+        
+        var calculo = n1 + n2
+
+        mensagem.innerHTML = (`A soma de ${n1} e ${n2} é ${calculo}!`)
+    }
+    function subtrair() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+
+        var calculo = n1 - n2
+
+        mensagem.innerHTML = (`A subtração de ${n1} e ${n2} é ${calculo}!`)
+    }
+    function multi() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+
+        var calculo = n1 * n2
+
+        mensagem.innerHTML = (`A multiplicação de ${n1} e ${n2} é ${calculo}!`)
+    }
+    function dividir() {
+        var n1 = Number(ipt_n1.value);
+        var n2 = Number(ipt_n2.value);
+
+        var calculo = n1 / n2
+
+        mensagem.innerHTML = (`A divisão de ${n1} e ${n2} é ${calculo}!`)
+    }
+
+</script>

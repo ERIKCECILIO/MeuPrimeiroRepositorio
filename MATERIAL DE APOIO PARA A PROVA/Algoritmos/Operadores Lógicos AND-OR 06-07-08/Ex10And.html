@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Descobra se você é liso ou ostentação!</h1>
+    <br><br>
+
+    Insira sua idade:
+    <input type="text" id="ipt_idade"> <br><br>
+
+    Digite seu salário:
+    <input type="text" id="ipt_salario"><br><br>
+
+    <button onclick="calcular()">Analisar Situação</button>
+
+    <div id="div_men"></div>
+
+</body>
+
+</html>
+
+
+<script>
+
+    var idade = Number(ipt_idade.value)
+    var salario = Number(ipt_salario.value)
+
+    function calcular() {
+        idade = Number(ipt_idade.value)
+        salario = Number(ipt_salario.value)
+
+        if (idade < 18 && salario < 2500) div_men.innerHTML = "Menor de idade e liso!"
+        
+        
+        else if (idade < 18 && salario >= 2500) div_men.innerHTML = "Menor de idade e ostentação!"
+        else if (idade >= 18 && salario < 3500) div_men.innerHTML = "Maior de idade e liso!"
+        else if (idade >= 18 && salario >= 3500 && salario < 7000) div_men.innerHTML = "Maior de idade e ostentação!"
+        else if (idade >= 18 && salario > 7000) div_men.innerHTML = "Maior de idade e mega ostentação!"
+
+
+    }
+
+
+
+
+</script>

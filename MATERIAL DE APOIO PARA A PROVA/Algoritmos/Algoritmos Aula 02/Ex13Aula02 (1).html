@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Transporte</title>
+</head>
+<body>
+    <h1>Calculadora de Transporte!</h1>
+
+    <label for="passagem">Valor da passagem Ônibus:</label>
+    <input id="passagem" type="text" value="4.00">
+
+    <label for="viagens">Quantidade de viagens de ônibus/mês:</label>
+    <input id="viagens" type="text" value="50">
+
+    <label for="distancia">Distância do trabalho até a casa (Kms):</label>
+    <input id="distancia" type="text" value="10">
+
+    <button onclick="calcularGastos()">Calcular seu VT!</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularGastos() {
+           
+            var valorPassagem = Number(document.querySelector('input#passagem').value);
+            var quantidadeViagens = Number(document.querySelector('input#viagens').value);
+            var distancia = Number(document.querySelector('input#distancia').value);
+
+            
+            var viagensApp = Math.round(quantidadeViagens * 0.10);
+
+    
+            var gastoOnibus = valorPassagem * (quantidadeViagens - viagensApp);
+
+          
+            var custoKm = 0.75; 
+            var gastoApp = custoKm * distancia * viagensApp;
+
+    
+            var gastoTotal = gastoOnibus + gastoApp;
+
+        
+            document.querySelector('#resultado').innerText = 
+                'Você vai gastar um total de R$' + gastoTotal.toFixed(2) + ' por mês com transporte.';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01.RandomNumbers</title>
+</head>
+
+<body>
+
+
+    <button onclick="random()">Sortear</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function random() {
+
+        var mensagem = ""
+
+        var aleatorio = Math.random();
+
+        // fórmula 5 até 10
+        // aleatorio = numero math random
+        // intervalo = max - min, no caso abaixo, 10 - 5
+        // min = primeiro numero possivel, no caso abaixo, 5
+        // var cinco_dez = aleatorio * intervalo + minimo;
+
+        var zero_a_dez = aleatorio * 10;
+        
+        mensagem += `Aleatório gerado: ${aleatorio} <br>`;
+
+        if (aleatorio >= 0.5) {
+            mensagem += `Eu arredondaria para 1!`
+
+        } else mensagem += `Eu arredondaria para 0`
+
+        console.log (mensagem)
+    }
+
+
+
+
+</script>

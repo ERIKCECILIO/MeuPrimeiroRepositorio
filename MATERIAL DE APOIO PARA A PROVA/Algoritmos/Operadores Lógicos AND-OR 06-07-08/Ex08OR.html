@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+   <H1>Encontre sua empresa ideal!</H1>
+
+   Insira o nome da empresa:
+   <input type="text" id="ipt_empresa"> <br><br>
+
+   Insira o valor da bolsa da empresa:
+   <input type="number" id="ipt_bolsa"> <br><br>
+
+   Digite o VR da empresa:
+   <input type="number" id="ipt_vr">> <br><br>
+
+   Digite o tempo de deslocamento até a SPTech:
+   <input type="number" id="ipt_tempo"> <br><br>
+
+   <button onclick="match()">É a empresa ideal? </button>
+
+   <div id="div_men"></div>
+
+
+</body>
+
+</html>
+<script>
+
+   var empresa = (ipt_empresa.value)
+   var bolsa = (ipt_bolsa.value)
+   var vale = (ipt_vr.value)
+   var deslocamento = (ipt_tempo.value)
+
+   function match() {
+
+      empresa = (ipt_empresa.value);
+      bolsa = (ipt_bolsa.value);
+      vale = (ipt_vr.value);
+      deslocamento = (ipt_tempo.value)
+      if (bolsa >= 1800 || vale >= 20 || deslocamento <= 30) {
+         div_mensagem.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+      } else {
+         div_mensagem.innerHTML = `A empresa ${empresa} está fora da sua lista`
+      }
+
+   }
+
+
+
+
+</script>

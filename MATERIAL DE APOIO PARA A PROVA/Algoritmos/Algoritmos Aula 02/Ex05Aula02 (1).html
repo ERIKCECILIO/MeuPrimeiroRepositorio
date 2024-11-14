@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Notas Prova Continuada: <input type="number1" id="input_nota_continuada">
+    <br>
+    Notas Prova Semestral: <input type="number2" id="input_nota_semestral">
+    <br>
+    Nome do Aluno: <input type="text" id="input_nome_do_aluno">
+
+    <button onclick= "média()">Calcule sua média!</button>
+
+    <div id="div_mensagem"></div>
+    
+    </body>
+    <script>
+    function média() {
+        var Continuada = Number(input_nota_continuada.value);
+        var Semestral = Number(input_nota_semestral.value);
+        var Aluno = type= (input_nome_do_aluno.value);
+        var Calcule = (Continuada + Semestral) / 2
+        
+        alert( 'A média de ' + Aluno + ' será de ' + Calcule);
+
+    
+    }
+</script>
+</html>

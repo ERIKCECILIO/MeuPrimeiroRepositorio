@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportech</title>
+</head>
+
+<body>
+    <h1 style="color:purple;">#Sportech#</h1>
+
+    <div>
+        Digite seu nome:
+        <br><input type="text" id="input_user"> <br>
+
+        Digite sua senha:
+        <br> <input type="text" id="input_pass"> <br>
+
+        Descubra Seu Grupo: <button id="btn_grupo">Grupo</button> <br><br>
+        <div id="grup"></div><br>
+        <button id="btn_cadastrar"><strong>Cadastrar!</strong></button> <br>
+    </div>
+    <div id="mensagem"></div>
+
+    <div style="display: none;" id="login">
+        <h2>Login</h2>
+
+        Digite seu username:
+        <br> <input type="text" id="ipt_username"> <br>
+        Digite sua senha:
+        <br> <input type="text" id="ipt_pass"> <br>
+        Digite seu grupo:
+        <br> <input type="text" id="ipt_grup"> <br>
+
+        <button id="btn_login">Acessar o Clube de Compras</button> <br>
+    </div>
+
+    <div style="display: none;" id="div_buy">
+        <h3>Extrato de Compra</h3>
+        <div id="extratocompra"></div>
+    </div>
+
+    <script>
+        var nomeUser = "";
+        var senhaUser = "";
+        var grupoUser = "";
+        var descontoUser = 0;
+
+        var inputUser = document.createElement('input');
+        var inputPass = document.createElement('input');
+        var grupoDiv = document.createElement('div');
+        var mensagemDiv = document.createElement('div');
+        var loginDiv = document.createElement('div');
+        var extratoCompraDiv = document.createElement('div');
+
+        inputUser.type = "text";
+        inputPass.type = "text";
+        
+        // Evento do botão para descobrir o grupo
+        document.getElementById('btn_grupo').addEventListener('click', function() {
+            var grupo = Math.floor(Math.random() * 4) + 1;
+            if (grupo === 1) {
+                grupoUser = "Ouro";
+                descontoUser = 0.20;
+                grupoDiv.innerText = "Grupo Ouro (Desconto: 20%)";
+            } else if (grupo === 2) {
+                grupoUser = "Prata";
+                descontoUser = 0.15;
+                grupoDiv.innerText = "Grupo Prata (Desconto: 15%)";
+            } else if (grupo === 3) {
+                grupoUser = "Bronze";
+                descontoUser = 0.10;
+                grupoDiv.innerText = "Grupo Bronze (Desconto: 10%)";
+            } else {
+                grupoUser = "Cobre";
+                descontoUser = 0.05;
+                grupoDiv.innerText = "Grupo Cobre (Desconto: 5%)";
+            }
+        });
+
+        // Evento para Cadastro
+        document.getElementById('btn_cadastrar').addEventListener('click', function() {
+            var nome = inputUser.value;
+            var senha = inputPass.value;
+            var correto = true;
+
+            var caracteresInvalidos = "!@#$%&";
+            for (var i = 0; i < nome.length; i++) {
+                if (caracteresInvalidos.indexOf(nome[i]) !== -1) {
+                    mensagemDiv.innerHTML = "<br>Nome de usuário inválido. Verifique os caracteres utilizados!";
+                    correto = false;
+                    break;
+                }
+            }
+
+            var possuiMinuscula = false;
+            var possuiMaiuscula = false;
+            var possuiNumero = false;
+            var possuiEspecial = false;
+
+            for (var i = 0; i < senha.length; i++) {
+                var char = senha[i];
+                if (char >= 'a' && char <= 'z') {
+                    possuiMinuscula = true;
+                }
+                if (char >= 'A' && char <= 'Z') {
+                    possuiMaiuscula = true;
+                }
+                if (char >= '0' && char <= '9') {
+                    possuiNumero = true;
+                }
+                if (caracteresInvalidos.indexOf(char) !== -1) {
+                    possuiEspecial = true;
+                }
+            }
+
+            if (senha.length < 8 || !possuiMinuscula || !possuiMaiuscula || !possuiNumero || !possuiEspecial) {
+                mensagemDiv.innerHTML += "<br>A senha deve ter no mínimo 8 caracteres, com ao menos um caractere especial, uma letra maiúscula, uma letra minúscula e um número.";
+                correto = false;
+            }
+
+            if (correto) {
+                nomeUser = nome;
+                senhaUser = senha;
+                inputUser.value = "";
+                inputPass.value = "";
+                document.getElementById('cadastro').style.display = "none";
+                document.getElementById('login').style.display = "block";
+                document.getElementById('ipt_grup').value = grupoUser;
+            }
+        });
+
+        // Evento para Login
+        document.getElementById('btn_login').addEventListener('click', function() {
+            var nomeLogin = document.getElementById('ipt_username').value;
+            var senhaLogin = document.getElementById('ipt_pass').value;
+            var grupoLog = document.getElementById('ipt_grup').value;
+
+            if (nomeLogin === nomeUser && senhaLogin === senhaUser && grupoLog === grupoUser) {
+                document.getElementById('login').style.display = "none";
+                GerarCompra();
+            } else {
+                alert("Login Inválido! Informações não correspondem!");
+            }
+        });
+
+        function GerarCompra() {
+            var qtdProdutos = Math.floor(Math.random() * 10) + 1;
+            var valorMedio = (Math.random() * 90 + 10).toFixed(2);
+            var valorTotal = (qtdProdutos * valorMedio).toFixed(2);
+            var desconto = (valorTotal * descontoUser).toFixed(2);
+            var valorFinal = (valorTotal - desconto).toFixed(2);
+
+            var extrato_compra = `
+                <br><h2>Extrato de Compra</h2><br>
+                Quantidade de produtos: ${qtdProdutos}<br>
+                Preço médio por produto: R$${valorMedio}<br>
+                Valor original: R$${valorTotal}<br>
+                Desconto: ${(descontoUser * 100).toFixed(0)}% - R$${desconto}<br>
+                Valor final: R$${valorFinal}<br>
+            `;
+
+            extratoCompraDiv.innerHTML = extrato_compra;
+            document.getElementById('div_buy').style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

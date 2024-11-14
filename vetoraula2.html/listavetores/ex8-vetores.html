@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Cadastre o Nome do Aluno: <input type="text" id="ipt_cadastro"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+
+    <br><div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+
+    var lista_aluno = [];
+
+
+    function cadastrar() {
+        var cadastroAluno = ipt_cadastro.value;
+
+        lista_aluno.push(cadastroAluno);
+
+        div_mensagem.innerHTML = `O aluno ${cadastroAluno} foi adicionado! <br>`;
+
+        for (var index = lista_aluno.length - 1; index >= 0; index--) {
+
+            div_mensagem.innerHTML += `<br>${lista_aluno[index]}<br>`;
+        }
+    }
+
+</script>

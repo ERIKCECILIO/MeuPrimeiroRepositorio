@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Ano de Nascimento <input type="number" id="ipt_idade">
+    <button onclick="homem()">Aposentadoria Homem</button>
+    <button onclick="mulher()">Aposentadoria Mulher</button>
+</body>
+
+</html>
+<script>
+
+    function homem() {
+
+        var anoUsuario = Number(ipt_idade.value)
+        var idadeUsuario = 2024 - anoUsuario
+        var tempoRestante = 70 - idadeUsuario
+        var mensagem = `Faltam ${tempoRestante} anos para você se aposentar!`
+        
+        alert(mensagem)
+       
+    }
+
+    function mulher() {
+
+var anoUsuario = Number(ipt_idade.value)
+var idadeUsuario = 2024 - anoUsuario
+var tempoRestante = 60 - idadeUsuario
+var mensagem = `Faltam ${tempoRestante} anos para você se aposentar!`
+
+alert(mensagem)
+
+}
+
+
+</script>

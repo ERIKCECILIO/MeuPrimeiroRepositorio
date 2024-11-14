@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 01 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Cálculo da Média de Duas Notas -->
+<h3>Exercício 1</h3>
+Qual a primeira nota?
+<input type="text" id="nota1_ex1"><br>
+Qual a segunda nota?
+<input type="text" id="nota2_ex1"><br>
+<button onclick="calcularMediaEx1()">Calcular Média</button>
+<div id="resultado_ex1"></div>
+
+<script>
+function calcularMediaEx1() {
+    var nota1 = Number(nota1_ex1.value);
+    var nota2 = Number(nota2_ex1.value);
+    var media = (nota1 + nota2) / 2;
+    resultado_ex1.innerHTML = "A média é: " + media;
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Média com Mensagem Condicional -->
+<h3>Exercício 2</h3>
+Qual a primeira nota?
+<input type="text" id="nota1_ex2"><br>
+Qual a segunda nota?
+<input type="text" id="nota2_ex2"><br>
+<button onclick="calcularMediaEx2()">Verificar Média</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function calcularMediaEx2() {
+    var nota1 = Number(nota1_ex2.value);
+    var nota2 = Number(nota2_ex2.value);
+    var media = (nota1 + nota2) / 2;
+
+    if (media >= 5) {
+        resultado_ex2.innerHTML = "#partiuestágio";
+    } else {
+        resultado_ex2.innerHTML = "#partiutentardenovo";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Sexo e Idade -->
+<h3>Exercício 3</h3>
+Qual o seu sexo?
+<input type="text" id="sexo_ex3"><br>
+Qual a sua idade?
+<input type="text" id="idade_ex3"><br>
+<button onclick="verificarSexoIdade()">Verificar</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function verificarSexoIdade() {
+    var sexo = sexo_ex3.value;
+    var idade = Number(idade_ex3.value);
+
+    if (sexo.toLowerCase() === "masculino" && idade < 18) {
+        resultado_ex3.innerHTML = "Você é homem jovem";
+    } else if (sexo.toLowerCase() === "masculino" && idade >= 18) {
+        resultado_ex3.innerHTML = "Você é homem maior de idade";
+    } else if (sexo.toLowerCase() === "feminino" && idade < 18) {
+        resultado_ex3.innerHTML = "Você é mulher jovem";
+    } else if (sexo.toLowerCase() === "feminino" && idade >= 18) {
+        resultado_ex3.innerHTML = "Você é mulher maior de idade";
+    }
+}
+</script>
+
+<!-- Continue a criar os demais exercícios seguindo o mesmo padrão -->
+
+</body>
+</html>

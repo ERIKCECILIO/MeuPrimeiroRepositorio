@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Valor da Passagem: <input type="text" id="input_valor_passagem">
+    Qtd Viagens: <input type="text" id="input_qtd_viagens">
+
+    <button onclick="Economia()">Ver economia</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+<script>
+    function Economia(){
+        var valorPassagem = Number(input_valor_passagem.value);
+        var qtdViagens = Number(input_qtd_viagens.value);
+        var meiaPassagem = valorPassagem * qtdViagens / 2
+
+        var mensagem = ( "Você economizará " + meiaPassagem + "R$ por mês!" )
+
+        alert(mensagem)
+    }
+
+
+
+</script>
+</html>

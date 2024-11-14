@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <br> Produto:<input type="text" id="ipt_produto"><br>
+    <br> Preço:<input type="text" id="ipt_preco"><br>
+
+    <br><button onclick="cadastro()">Cadastrar</button><br>
+
+    <div id="div_menCadastro"></div><br>
+
+    <br> <button onclick="atualizar()">Atualizar Estoque</button><br>
+
+    <br><select id="selectOrdem">
+        <option value="acima">Preços acima de</option>
+        <option value="abaixo">Preços abaixo de</option>
+    </select><br>
+
+    <br> <input type="text" id="ipt_ordem"><br>
+
+    <br><button onclick="filtrar()">Filtrar Produtos</button><br>
+
+    <div id="div_men"></div>
+</body>
+
+</html>
+
+<script>
+
+    var listaProduto = [];
+    var listaPreco = [];
+
+    function cadastro() {
+
+        var produto = ipt_produto.value;
+        var precoProduto = ipt_preco.value;
+
+        var tamanhoProduto = listaProduto.length;
+        var positivo = listaPreco > 0;
+
+        if (tamanhoProduto >= 3 && positivo) {
+            listaProduto.push(produto);
+            listaPreco.push(precoProduto);
+            div_menCadastro.innerHTML = `${produto}foi cadastrado com sucesso!`
+        } else {
+            div_menCadastro.innerHTML = `<br>O produto não possui ao menos 3 letras, ou preço não é positivo. Digite valores válidos!<br>`
+        }
+    }
+
+    var valorTotal = 0;
+
+    function atualizar() {
+        var mensagem = ``;
+        var tamanhoProduto = listaProduto.length;
+        var tamanhoPreco = listaPreco.length;
+        var contador = 0
+        var valorTotal = 0
+
+        for (var contador = 0; contador < tamanhoProduto; contador++, contador++) {
+            var produtoAtual = listaProduto[contador];
+            var precoAtual = Number(listaPreco[contador]);
+            valorTotal += valorTotal;
+            mensagem += `<br>${contador + 1}.${produtoAtual}R$${precoAtual}<br>`;
+        }
+
+        div_men.innerHTML =
+            `Você tem exatamente ${contador} produtos cadastrados em estoque:${mensagem}
+         Seu estoque tem o valor de R$${precoAtual}`
+    }
+
+    function filtrar() {
+        var mensagem = ``;
+
+
+        var filtro = selectOrdem.value;
+        var numero = Number(ipt_ordem.value);
+
+
+        var tamanhoProduto = listaProduto.length;
+
+        if (filtro == 'acima') {
+
+            for (var contador = 0; contador < tamanhoProduto; contador++) {
+                var produtoAtual = listaProduto[contador];
+                var precoAtual = listaPreco[contador];
+
+                if (precoAtual > numero) {
+                    mensagem += ` <br>${contador + 1}. ${produtoAtual}R$${precoAtual}<br>`;
+                }
+            }
+
+        } else {
+            for (var contador = 0; contador < tamanhoProduto; contador++) {
+                var produtoAtual2 = listaProduto[contador];
+                var precoAtual2 = listaPreco[contador];
+
+                if (precoAtual2 < numero) {
+                    mensagem += `<br>${contador + 1}. ${produtoAtual2}R$${precoAtual2}<br>`;
+                }
+            }
+        }
+
+        div_men.innerHTML = mensagem
+    }
+</script>

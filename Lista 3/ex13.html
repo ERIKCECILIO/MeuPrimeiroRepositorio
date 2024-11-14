@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Valor da passagem de ônibus: <input type="number" id="ipt_valorPassagem"> <br><br>   
+        Quantidade de viagens ao mês: <input type="number" id="ipt_qtdViagens">    <br><br>
+        Distância trabalho > casa em KMs: <input type="number" id="ipt_distancia">  <br><br>  
+
+<br>
+    <button onclick="calcular()">Calcular VT</button><br>
+    <div id="mensagem"></div><br>
+</body>
+</html>
+<script>
+
+        function calcular(){
+            var valor =  Number (ipt_valorPassagem.value);
+            var viagens =  Number (ipt_qtdViagens.value);
+            var distancia =  Number (ipt_distancia.value);
+
+            var km = 0.75
+            var app = (viagens * 0.10);
+
+            var gastoBus = valor * (viagens - app);
+            var gastoApp = km * distancia * app
+        
+
+            var totalGasto = gastoBus + gastoApp
+
+
+            mensagem.innerHTML = `Você vai gastar R$${totalGasto.toFixed(2)} por mês com transporte.`
+        }
+
+
+
+
+</script>

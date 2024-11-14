@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um numero : <input id="ipt_numero" type="number"></input> <Br>
+    <button onclick="mult()">Viva o 7</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+function mult(){
+
+    var numero = Number(ipt_numero.value)
+    var mensagem= ""
+
+    if (numero >=0 && numero <= 200){
+    for (var contador = 0; contador <= 200; contador++) {
+        if (contador % 7 == 0)
+        mensagem += `<br>${contador} `
+    }
+    div_mensagem.innerHTML= `${mensagem}`
+    } else alert ("Digite um valor entre 0 e 200")
+
+}
+
+
+</script>

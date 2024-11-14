@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Aposentadoria -->
+<h3>Exercício 1</h3>
+Idade do usuário:
+<input type="number" id="idade_usuario"><br><br>
+<button onclick="aposentadoriaHomem()">Aposentadoria Homem</button>
+<button onclick="aposentadoriaMulher()">Aposentadoria Mulher</button>
+<div id="resultado_ex1"></div>
+
+<script>
+function aposentadoriaHomem() {
+    var idade = Number(idade_usuario.value);
+    var anosRestantes = 70 - idade;
+    alert("Faltam " + anosRestantes + " anos para se aposentar.");
+}
+
+function aposentadoriaMulher() {
+    var idade = Number(idade_usuario.value);
+    var anosRestantes = 60 - idade;
+    alert("Faltam " + anosRestantes + " anos para se aposentar.");
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Custo da Pizza -->
+<h3>Exercício 2</h3>
+Valor da pizza:
+<input type="text" id="valor_pizza"><br><br>
+Quantidade de amigos:
+<input type="number" id="quantidade_amigos"><br><br>
+<button onclick="calcularPizza()">#lovePizza</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function calcularPizza() {
+    var valor = Number(valor_pizza.value);
+    var amigos = Number(quantidade_amigos.value);
+    var valorPorAmigo = valor / amigos;
+    alert("Cada um dos " + amigos + " amigos vai pagar R$" + valorPorAmigo.toFixed(2));
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Economia com Bilhete Único -->
+<h3>Exercício 3</h3>
+Valor da passagem:
+<input type="text" id="valor_passagem"><br><br>
+Quantidade de viagens por mês:
+<input type="number" id="quantidade_viagens"><br><br>
+<button onclick="verEconomia()">Ver economia</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function verEconomia() {
+    var valor = Number(valor_passagem.value);
+    var viagens = Number(quantidade_viagens.value);
+    var economia = (valor / 2) * viagens;
+    alert("Você economizará R$" + economia.toFixed(2) + " por mês.");
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Cálculo de Ki do Sayajin -->
+<h3>Exercício 4</h3>
+Nome do guerreiro:
+<input type="text" id="nome_guerreiro"><br><br>
+Ki normal:
+<input type="number" id="ki_normal"><br><br>
+<button onclick="calcularKi()">Ver ki em cada forma</button>
+<div id="resultado_ex4"></div>
+
+<script>
+function calcularKi() {
+    var nome = nome_guerreiro.value;
+    var ki = Number(ki_normal.value);
+    var kiSSJ = ki * 50;
+    var kiSSJ2 = ki * 100;
+
+    alert("Após se transformar em SSJ, o ki de " + nome + " passa a ser de " + kiSSJ);
+    alert("Após se transformar em SSJ2, o ki de " + nome + " passa a ser de " + kiSSJ2);
+}
+</script>
+
+<!-- EXERCÍCIO 5 - Cálculo da Média -->
+<h3>Exercício 5</h3>
+Nota da avaliação continuada:
+<input type="number" id="nota_continuada"><br><br>
+Nota da avaliação semestral:
+<input type="number" id="nota_semestral"><br><br>
+Nome do aluno:
+<input type="text" id="nome_aluno"><br><br>
+<button onclick="calcularMedia()">Calcular Média</button>
+<div id="resultado_ex5"></div>
+
+<script>
+function calcularMedia() {
+    var notaCont = Number(nota_continuada.value);
+    var notaSem = Number(nota_semestral.value);
+    var nome = nome_aluno.value;
+    var media = (notaCont * 0.4) + (notaSem * 0.6);
+
+    resultado_ex5.innerHTML = "A média de " + nome + " será de " + media.toFixed(2);
+}
+</script>
+
+<!-- EXERCÍCIO 6 - Operações Aritméticas -->
+<h3>Exercício 6</h3>
+Número 1:
+<input type="number" id="numero1"><br><br>
+Número 2:
+<input type="number" id="numero2"><br><br>
+<button onclick="somar()">Somar</button>
+<button onclick="subtrair()">Subtrair</button>
+<button onclick="multiplicar()">Multiplicar</button>
+<button onclick="dividir()">Dividir</button>
+<div id="resultado_ex6"></div>
+
+<script>
+function somar() {
+    var num1 = Number(numero1.value);
+    var num2 = Number(numero2.value);
+    resultado_ex6.innerHTML = "A soma entre " + num1 + " e " + num2 + " é " + (num1 + num2);
+}
+
+function subtrair() {
+    var num1 = Number(numero1.value);
+    var num2 = Number(numero2.value);
+    resultado_ex6.innerHTML = "A diferença entre " + num1 + " e " + num2 + " é " + (num1 - num2);
+}
+
+function multiplicar() {
+    var num1 = Number(numero1.value);
+    var num2 = Number(numero2.value);
+    resultado_ex6.innerHTML = "O produto entre " + num1 + " e " + num2 + " é " + (num1 * num2);
+}
+
+function dividir() {
+    var num1 = Number(numero1.value);
+    var num2 = Number(numero2.value);
+    resultado_ex6.innerHTML = "A razão entre " + num1 + " e " + num2 + " é " + (num1 / num2);
+}
+</script>
+
+</body>
+</html>

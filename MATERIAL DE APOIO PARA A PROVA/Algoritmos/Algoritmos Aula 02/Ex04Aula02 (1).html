@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do Guerreiro: <input type="text" id="input_nome_do_guerreiro">
+    <br>
+    Ki Normal: <input type="text" id="input_ki_normal">
+
+    <button onclick="verKi()">Veja seu Ki em cada forma</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+<script>
+    function verKi () {
+        var guerreiro = (input_nome_do_guerreiro.value);
+        var kiNormal = Number(input_ki_normal.value);
+        var superSayajin = kiNormal * 50
+        var superSayajin2 = kiNormal * 100
+
+        alert( ' O Ki na forma Super Sayajin de ' + guerreiro + ' será de ' + superSayajin);
+        alert( ' O Ki na forma de Super Sayajin 2 de ' + guerreiro + ' será de ' + superSayajin2);
+
+    }
+
+
+
+
+
+</script>
+</html>

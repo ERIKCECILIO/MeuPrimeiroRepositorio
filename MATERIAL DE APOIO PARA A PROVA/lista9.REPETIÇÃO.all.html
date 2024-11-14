@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Contar de 1 a 15 -->
+<h3>Exercício 1</h3>
+<button onclick="contar()">Contar</button>
+<div id="resultado_ex1"></div>
+
+<script>
+function contar() {
+    resultado_ex1.innerHTML = "";
+    for (var i = 1; i <= 15; i++) {
+        resultado_ex1.innerHTML += i + "<br>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Dizer algo sobre a matéria de Algoritmos -->
+<h3>Exercício 2</h3>
+<button onclick="dizerAlgo()">Diga algo sobre a matéria de Algoritmos</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function dizerAlgo() {
+    resultado_ex2.innerHTML = "";
+    for (var i = 0; i < 7; i++) {
+        resultado_ex2.innerHTML += "Algoritmos são divertidos!<br>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Dizer algo com contador -->
+<h3>Exercício 3</h3>
+<button onclick="dizerComContador()">Dizer algo com contador</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function dizerComContador() {
+    resultado_ex3.innerHTML = "";
+    for (var i = 1; i <= 7; i++) {
+        resultado_ex3.innerHTML += i + ". Algoritmos são divertidos!<br>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Números Pares -->
+<h3>Exercício 4</h3>
+<button onclick="numerosPares()">S2 Pares</button>
+<div id="resultado_ex4"></div>
+
+<script>
+function numerosPares() {
+    resultado_ex4.innerHTML = "";
+    for (var i = 0; i <= 100; i += 2) {
+        resultado_ex4.innerHTML += i + "<br>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 5 - Números cabalísticos -->
+<h3>Exercício 5</h3>
+<button onclick="numerosCabalisticos()">Números cabalísticos</button>
+<div id="resultado_ex5"></div>
+
+<script>
+function numerosCabalisticos() {
+    resultado_ex5.innerHTML = "";
+    for (var i = 1; i <= 30; i++) {
+        if (![3, 4, 7, 10, 12].includes(i)) {
+            resultado_ex5.innerHTML += i + "<br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 6 - Expressar amor -->
+<h3>Exercício 6</h3>
+Nome da pessoa amada:
+<input type="text" id="nome_amado"><br><br>
+Quanto você ama?
+<input type="number" id="quantidade_amor"><br><br>
+<button onclick="expressarAmor()">Expressar amor</button>
+<div id="resultado_ex6"></div>
+
+<script>
+function expressarAmor() {
+    var nome = nome_amado.value;
+    var quantidade = Number(quantidade_amor.value);
+    resultado_ex6.innerHTML = "";
+
+    for (var i = 1; i <= quantidade; i++) {
+        resultado_ex6.innerHTML += i + " - " + nome + ", eu te amo! Sempre lembre disso!<br>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 7 - Múltiplos de 5 -->
+<h3>Exercício 7</h3>
+Número:
+<input type="number" id="numero_multiplos_5"><br><br>
+<button onclick="adoroMultiplos5()">Adoro múltiplos de 5</button>
+<div id="resultado_ex7"></div>
+
+<script>
+function adoroMultiplos5() {
+    var numero = Number(numero_multiplos_5.value);
+    resultado_ex7.innerHTML = "";
+    
+    for (var i = 0; i <= numero; i++) {
+        if (i % 5 === 0) {
+            resultado_ex7.innerHTML += i + "<br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 8 - Múltiplos de 7 -->
+<h3>Exercício 8</h3>
+Número:
+<input type="number" id="numero_multiplos_7"><br><br>
+<button onclick="vivaO7()">Viva o 7!</button>
+<div id="resultado_ex8"></div>
+
+<script>
+function vivaO7() {
+    var numero = Number(numero_multiplos_7.value);
+    resultado_ex8.innerHTML = "";
+    
+    for (var i = 0; i <= numero; i++) {
+        if (i % 7 === 0) {
+            resultado_ex8.innerHTML += i + "<br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 9 - Papagaio -->
+<h3>Exercício 9</h3>
+Número:
+<input type="number" id="numero_papagaio"><br><br>
+Frase:
+<input type="text" id="frase_papagaio"><br><br>
+<button onclick="papagaio()">Papagaio</button>
+
+<script>
+function papagaio() {
+    var numero = Number(numero_papagaio.value);
+    var frase = frase_papagaio.value;
+
+    for (var i = 0; i < numero; i++) {
+        alert(frase);
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 10 - Números pares em intervalo -->
+<h3>Exercício 10</h3>
+Número inicial:
+<input type="number" id="num_inferior"><br><br>
+Número final:
+<input type="number" id="num_superior"><br><br>
+<button onclick="numerosParesIntervalo()">S2 Pares</button>
+<div id="resultado_ex10"></div>
+
+<script>
+function numerosParesIntervalo() {
+    var inferior = Number(num_inferior.value);
+    var superior = Number(num_superior.value);
+    resultado_ex10.innerHTML = "";
+
+    for (var i = inferior; i <= superior; i++) {
+        if (i % 2 === 0) {
+            resultado_ex10.innerHTML += i + "<br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 11 - Corrida -->
+<h3>Exercício 11</h3>
+Número de voltas:
+<input type="number" id="numero_voltas"><br><br>
+<button onclick="iniciarCorrida()">Iniciar corrida!</button>
+<div id="resultado_ex11"></div>
+
+<script>
+function iniciarCorrida() {
+    var voltas = Number(numero_voltas.value);
+    resultado_ex11.innerHTML = "";
+    
+    for (var i = 1; i <= voltas; i++) {
+        resultado_ex11.innerHTML += "Carro dando a " + i + "ª volta<br>";
+    }
+    resultado_ex11.innerHTML += "Corrida finalizada!";
+}
+</script>
+
+<!-- EXERCÍCIO 12 - Tabuada -->
+<h3>Exercício 12</h3>
+Tabuada:
+<input type="number" id="tabuada_num"><br><br>
+Até:
+<input type="number" id="tabuada_ate"><br><br>
+<button onclick="verTabuada()">Ver Tabuada</button>
+<div id="resultado_ex12"></div>
+
+<script>
+function verTabuada() {
+    var tabuada = Number(tabuada_num.value);
+    var ate = Number(tabuada_ate.value);
+    resultado_ex12.innerHTML = "";
+
+    for (var i = 1; i <= ate; i++) {
+        var resultado = tabuada * i;
+        if (i % 2 === 0) {
+            resultado_ex12.innerHTML += tabuada + " x " + i + " = " + resultado + "<br>";
+        } else {
+            resultado_ex12.innerHTML += "<span style='color:red'>" + tabuada + " x " + i + " = " + resultado + "</span><br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 13 - Rotina Mensal -->
+<h3>Exercício 13</h3>
+Quantos dias na semana faz musculação?
+<input type="number" id="musculacao_dias"><br><br>
+<button onclick="rotinaMensal()">Exibir rotina mensal</button>
+<div id="resultado_ex13"></div>
+
+<script>
+function rotinaMensal() {
+    var dias = Number(musculacao_dias.value);
+    resultado_ex13.innerHTML = "";
+
+    for (var i = 1; i <= 30; i++) {
+        if (i % dias === 0) {
+            resultado_ex13.innerHTML += "Dia " + i + " - Musculação<br>";
+        } else {
+            resultado_ex13.innerHTML += "Dia " + i + " - Comer, dormir etc<br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 14 - Números entre intervalo -->
+<h3>Exercício 14</h3>
+Número inicial:
+<input type="number" id="intervalo_inferior"><br><br>
+Número final:
+<input type="number" id="intervalo_superior"><br><br>
+<button onclick="contar()">Curto 3 e 5!</button>
+<div id="resultado_ex14"></div>
+
+<script>
+function contar() {
+    var inferior = Number(intervalo_inferior.value);
+    var superior = Number(intervalo_superior.value);
+    resultado_ex14.innerHTML = "";
+
+    for (var i = inferior; i <= superior; i++) {
+        var mensagem = i;
+        if (i % 3 === 0 && i % 5 === 0) {
+            mensagem = "É TRI!É PENTA!";
+        } else if (i % 3 === 0) {
+            mensagem = "É TRI!";
+        } else if (i % 5 === 0) {
+            mensagem = "É PENTA!";
+        }
+        resultado_ex14.innerHTML += mensagem + "<br>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 15 - Avaliação da Idade -->
+<h3>Exercício 15</h3>
+Idade:
+<input type="number" id="idade_usuario"><br><br>
+<button onclick="avaliarIdade()">Ver Idade</button>
+<div id="resultado_ex15"></div>
+
+<script>
+function avaliarIdade() {
+    var idade = Number(idade_usuario.value);
+    resultado_ex15.innerHTML = "";
+
+    for (var i = 0; i <= idade; i++) {
+        var fase;
+        if (i <= 4) {
+            fase = "Primeira Infância";
+        } else if (i <= 6) {
+            fase = "Pré-escolar";
+        } else if (i <= 10) {
+            fase = "Segunda Infância";
+        } else if (i <= 18) {
+            fase = "Adolescência";
+        } else if (i <= 50) {
+            fase = "Adulto";
+        } else if (i <= 100) {
+            fase = "Melhor idade";
+        } else {
+            fase = "Matusalém";
+        }
+        resultado_ex15.innerHTML += i + " anos (" + fase + ")<br>";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 16 - Caronas -->
+<h3>Exercício 16</h3>
+Número de passageiros:
+<input type="number" id="num_passageiros"><br><br>
+<button onclick="partiuCarona()">#Partiu Carona</button>
+<div id="resultado_ex16"></div>
+
+<script>
+function partiuCarona() {
+    var numPassageiros = Number(num_passageiros.value);
+    resultado_ex16.innerHTML = "";
+
+    for (var i = 1; i <= numPassageiros; i++) {
+        if (i === 1) {
+            resultado_ex16.innerHTML += "Entrou o " + i + "º passageiro (que é o(a) motorista)<br>";
+        } else if (i <= 5) {
+            resultado_ex16.innerHTML += "Entrou o " + i + "º passageiro<br>";
+        } else {
+            resultado_ex16.innerHTML += "O " + i + "º passageiro terá que esperar!<br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 17 - Capacidade do Veículo -->
+<h3>Exercício 17</h3>
+Capacidade do veículo:
+<input type="number" id="capacidade_veiculo"><br><br>
+Número de passageiros:
+<input type="number" id="num_passageiros_17"><br><br>
+<button onclick="partiuCaronaComCapacidade()">#Partiu Carona</button>
+<div id="resultado_ex17"></div>
+
+<script>
+function partiuCaronaComCapacidade() {
+    var capacidade = Number(capacidade_veiculo.value);
+    var numPassageiros = Number(num_passageiros_17.value);
+    resultado_ex17.innerHTML = "";
+
+    for (var i = 1; i <= numPassageiros; i++) {
+        if (i === 1) {
+            resultado_ex17.innerHTML += "Entrou o " + i + "º passageiro (que é o(a) motorista)<br>";
+        } else if (i <= capacidade) {
+            resultado_ex17.innerHTML += "Entrou o " + i + "º passageiro<br>";
+        } else {
+            resultado_ex17.innerHTML += "O " + i + "º passageiro terá que esperar!<br>";
+        }
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 18 - Coca-Cola -->
+<h3>Exercício 18</h3>
+Quantas Coca-Colas já bebeu?
+<input type="number" id="coca_count"><br><br>
+<button onclick="verCoca()">Ver a quantidade</button>
+<div id="resultado_ex18"></div>
+
+<script>
+function verCoca() {
+    var quantidade = Number(coca_count.value);
+    resultado_ex18.innerHTML = "";
+
+    for (var i = 0; i < quantidade; i++) {
+        resultado_ex18.innerHTML += "🥤";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 19 - Café com Leite -->
+<h3>Exercício 19</h3>
+Quantas xícaras de café com leite tomou?
+<input type="number" id="cafe_count"><br><br>
+<button onclick="verCafe()">Ver a quantidade</button>
+<div id="resultado_ex19"></div>
+
+<script>
+function verCafe() {
+    var quantidade = Number(cafe_count.value);
+    var colheresLeite = quantidade;
+    var colheresCafe = quantidade * 2;
+
+    resultado_ex19.innerHTML = colheresLeite + " colheres de leite<br>";
+    resultado_ex19.innerHTML += colheresCafe + " colheres de café";
+}
+</script>
+
+<!-- EXERCÍCIO 20 - Depósitos -->
+<h3>Exercício 20</h3>
+Número de depósitos:
+<input type="number" id="num_depositos"><br><br>
+Valor de cada depósito:
+<input type="number" id="valor_deposito"><br><br>
+<button onclick="acompanharGrana()">Acompanhar grana</button>
+<div id="resultado_ex20"></div>
+
+<script>
+function acompanharGrana() {
+    var depositos = Number(num_depositos.value);
+    var valor = Number(valor_deposito.value);
+    resultado_ex20.innerHTML = "";
+
+    for (var i = 1; i <= depositos; i++) {
+        resultado_ex20.innerHTML += i + "º Mês: R$" + (i * valor).toFixed(2) + "<br>";
+    }
+    resultado_ex20.innerHTML += "Total guardado: R$" + (depositos * valor).toFixed(2);
+}
+</script>
+
+<!-- EXERCÍCIO 21 - Bônus nos depósitos -->
+<h3>Exercício 21</h3>
+Número de depósitos:
+<input type="number" id="num_depositos_bonus"><br><br>
+Valor de cada depósito:
+<input type="number" id="valor_deposito_bonus"><br><br>
+<button onclick="acompanharGranaComBonus()">Acompanhar grana</button>
+<div id="resultado_ex21"></div>
+
+<script>
+function acompanharGranaComBonus() {
+    var depositos = Number(num_depositos_bonus.value);
+    var valor = Number(valor_deposito_bonus.value);
+    var total = 0;
+    resultado_ex21.innerHTML = "";
+
+    for (var i = 1; i <= depositos; i++) {
+        total += valor;
+        resultado_ex21.innerHTML += i + "º Mês: R$" + total.toFixed(2);
+
+        if (i % 3 === 0) { // A cada 3 depósitos, aplicar o bônus
+            total *= 1.01; // Bônus de 1%
+            resultado_ex21.innerHTML += " ⭐"; // Adiciona uma imagem de estrela
+        }
+        resultado_ex21.innerHTML += "<br>";
+    }
+    resultado_ex21.innerHTML += "Total guardado: R$" + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>

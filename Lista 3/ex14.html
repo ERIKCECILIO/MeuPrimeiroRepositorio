@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Ki Base Sayajin: <input type="number" id="ipt_ki">
+    Transformar em...
+    <button onclick="ssj()">SSJ</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function ssj(){
+        var ki = Number(ipt_ki.value)
+        var superSayajin = `Super Sayajin`
+        var ssj = ki * 50
+        mensagem.innerHTML = `Após se transformar em ${superSayajin}, o ki desse sayajin passa a ser de ${ssj} `
+    }
+    function ssj2(){
+        var ki = Number(ipt_ki.value)
+        var superSayajin2 = `Super Sayajin 2`
+        var ssj2 = ki * 100
+        mensagem.innerHTML = `Após se transformar em ${superSayajin2}, o ki desse sayajin passa a ser de ${ssj2} `
+    }
+    function ssj3(){
+        var ki = Number(ipt_ki.value)
+        var superSayajin3 = `Super Sayajin 3`
+        var ssj3 = ki * 200
+        mensagem.innerHTML = `Após se transformar em ${superSayajin3}, o ki desse sayajin passa a ser de ${ssj3} `
+    }
+</script>

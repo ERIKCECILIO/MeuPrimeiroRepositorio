@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistir Episódios</title>
+</head>
+
+<body>
+    Por qual episódio deseja começar a assistir?
+    <input type="number" id="input_Ep"><br><br>
+    Quanto tempo disponível você tem?
+    <input type="number" id="input_tempo"> <br><br>
+    Escolha a medida de tempo:
+    <select id="input_relogio">
+        <option value="horas">Horas</option>
+        <option value="minutos">Minutos</option>
+    </select> <br> <br>
+    Deseja pular a abertura?
+    <select id="input_op">
+        <option value="nao">Não</option>
+        <option value="sim">Sim</option>
+    </select> <br> <br>
+    Deseja pular o encerramento?
+    <select id="input_end">
+        <option value="nao">Não</option>
+        <option value="sim">Sim</option>
+    </select> <br> <br>
+    <button onclick="calcular()">Assistir Episódios</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var mensagem = "";
+        var episodioAtual = Number(input_Ep.value);
+        var tempoDisponivel = Number(input_tempo.value);
+        var medida = input_relogio.value;
+        var pularAbertura = input_op.value;
+        var pularEncerramento = input_end.value;
+
+        // Converte o tempo disponível para minutos se for em horas
+        if (medida == "horas") {
+            tempoDisponivel *= 60;
+        }
+
+        // Verifica se o número do episódio é válido
+        if (episodioAtual < 1 || episodioAtual > 1100) {
+            div_mensagem.innerHTML = "O número do episódio é inválido";
+
+        } else {
+            // Começa a simulação dos episódios
+            var episodiosAssistidos = 0;
+            // Tempo padrão do episódio (com abertura e encerramento)
+            var duracaoEpisodio = 24;
+
+            // Laço modificado sem o uso de "break"
+            for (var ep = episodioAtual; tempoDisponivel >= duracaoEpisodio; ep++) {
+
+                // Ajusta a duração do episódio de acordo com as preferências de pular abertura e encerramento
+                if (pularAbertura == "sim" && pularEncerramento == "sim") {
+                    duracaoEpisodio = 20;
+                } else if (pularAbertura == "sim" || pularEncerramento == "sim") {
+                    duracaoEpisodio = 22;
+                }
+
+                // Exibe o episódio que está assistindo
+                mensagem += `Você está no episódio: ${ep}<br>`;
+
+                // Percorre cada minuto do episódio
+                for (var minuto = 1; minuto <= duracaoEpisodio; minuto++) {
+                    if (minuto <= 2 && pularAbertura == "nao") {
+                        mensagem += `Minuto ${minuto} - Abertura do Episódio<br>`;
+                    } else if (minuto > 2 && minuto <= 22) {
+                        mensagem += `Minuto ${minuto} - Assistindo o Episódio<br>`;
+                    } else if (minuto > 22 && pularEncerramento == "nao") {
+                        mensagem += `Minuto ${minuto} - Encerramento do Episódio<br>`;
+                    }
+                    tempoDisponivel--; // Diminui o tempo disponível a cada minuto
+                }
+
+                episodiosAssistidos++; // Conta um episódio assistido
+            }
+
+            // Exibe quantos episódios foram assistidos
+            mensagem += `<br>Você assistiu ${episodiosAssistidos} episódio(s)`;
+        }
+
+        // Atualiza a div com a mensagem
+        div_mensagem.innerHTML = mensagem;
+    }
+</script>

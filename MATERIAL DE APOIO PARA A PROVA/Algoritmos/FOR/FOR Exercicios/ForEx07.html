@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite seu número: <input id="ipt_num" type="number"></input><br><br>
+    <button onclick="multi()">Adoro Múltiplos de 5</button>
+    <div id="div_men"></div>
+</body>
+
+</html>
+
+<script>
+
+    function multi() {
+
+        var num = Number(ipt_num.value)
+        var mensagem = ""
+
+        if (num >= 20 && num <= 100) {
+            for (var contador = 20; contador <= 100; contador++) {
+                if (contador % 5 == 0)
+                    mensagem += `<br>${contador} `
+            }
+            div_men.innerHTML = `${mensagem}`
+        } else alert("Digite um valor entre 20 e 100")
+
+    }
+
+
+</script>

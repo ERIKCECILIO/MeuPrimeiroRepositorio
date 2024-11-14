@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEx06</title>
+</head>
+
+<body>
+
+    Nome da Pessoa que você mais ama na vida:
+    <input type="text" id="ipt_love"> <br>
+    O quanto você ama esta pessoa na vida:
+    <input type="int" id="ipt_qt"><br>
+
+    <button onclick="amor()">Expressar Amor!</button>
+    <div id="div_men"></div>
+
+</body>
+
+</html>
+<script>
+
+    function amor() {
+
+        var love = (ipt_love.value)
+        var quanto = Number(ipt_qt.value)
+        var mensagem = ``
+        for (var contador = 1; contador <= quanto; contador++) {
+            mensagem += `<br> ${contador} - ${love}, eu te amo! Sempre lembre disso!`
+        }
+
+        div_men.innerHTML = mensagem
+
+    }
+
+
+
+</script>

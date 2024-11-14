@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Encontre a TV ideal para VOCÊ!</h1>
+
+    Escolha a sua ideal Marca da TV:
+
+    <select id="ipt_fabricante">
+        <option value="Samsung">Samsung</option>
+        <option value="LG">LG</option>
+        <option value="Mondial">Mondial</option>
+        <option value="Britânia">Britânia</option>
+    </select> <br> <br>
+
+    Insira o valor da TV:
+
+    <input type="number" id="ipt_valor"> <br> <br>
+
+    <button onclick="analisar()">Analisar a Compra</button>
+
+    <div id="div_men"></div>
+
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var fabricante = ipt_fabricante.value
+        var valor = Number(ipt_valor.value)
+
+        if (valor < 800 || valor > 2000) {
+            div_men.innerHTML = 'TV fora da faixa de preço'
+            if (valor < 800) div_men.innerHTML += 'Preço baixo demais!'
+            else div_men.innerHTML += 'TV cara demais, infelizmente!'
+        } else if (empresa == "Mondial" || empresa == "Britânia")
+            div_men.innerHTML = 'Na faixa de preço, porém marca não é confiável!'
+        else div_men.innerHTML = 'Oba! Essa TV pode entrar na sua lista!';
+
+
+    }
+</script>
+
+
+
+</script>

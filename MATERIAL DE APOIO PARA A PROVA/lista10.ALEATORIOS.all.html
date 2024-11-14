@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 10 - Exercícios</title>
+</head>
+<body>
+
+<!-- EXERCÍCIO 1 - Sortear número aleatório -->
+<h3>Exercício 1</h3>
+<button onclick="sortear()">Sortear</button>
+<div id="resultado_ex1"></div>
+
+<script>
+function sortear() {
+    var numero = Math.random(); // Gera um número aleatório entre 0 e 0.9999
+    resultado_ex1.innerHTML = numero;
+    if (numero > 0.5) {
+        resultado_ex1.innerHTML += "<br>Eu arredondaria para 1";
+    } else {
+        resultado_ex1.innerHTML += "<br>Eu arredondaria para 0";
+    }
+}
+</script>
+
+<!-- EXERCÍCIO 2 - Sortear time -->
+<h3>Exercício 2</h3>
+<button onclick="sortearTime()">Sortear time</button>
+<div id="resultado_ex2"></div>
+
+<script>
+function sortearTime() {
+    var times = ["time1.png", "time2.png", "time3.png", "time4.png"]; // Adicione seus arquivos de imagem
+    var sorteio = Math.random() * times.length; // Gera um número aleatório para selecionar um time
+    resultado_ex2.innerHTML = `<img src="${times[sorteio.toFixed(0)]}" alt="Escudo" height="150">`; // Usando toFixed para garantir um número inteiro
+}
+</script>
+
+<!-- EXERCÍCIO 3 - Jogar dado -->
+<h3>Exercício 3</h3>
+<button onclick="jogarDado()">Jogar dado</button>
+<div id="resultado_ex3"></div>
+
+<script>
+function jogarDado() {
+    var numero = Math.random() * 20; // Gera um número aleatório de 0 a 19.999
+    resultado_ex3.innerHTML = `<div style="width: 100px; height: 100px; background-color: black; color: white; display: flex; justify-content: center; align-items: center;">${numero.toFixed(0)}</div>`;
+}
+</script>
+
+<!-- EXERCÍCIO 4 - Sortear nota para aluno -->
+<h3>Exercício 4</h3>
+<button onclick="sortearNota()">Sortear Nota para aluno</button>
+<div id="resultado_ex4"></div>
+
+<script>
+function sortearNota() {
+    var nota = (Math.random() * 10).toFixed(1); // Nota entre 0 e 10 com 1 casa decimal
+    resultado_ex4.innerHTML = `Nota sorteada: ${nota}`;
+}
+</script>
+
+<!-- EXERCÍCIO 5 - Jogo "jo ken po" -->
+<h3>Exercício 5</h3>
+<button onclick="jogarJoKenPo()">Jogar</button>
+<div id="resultado_ex5"></div>
+
+<script>
+function jogarJoKenPo() {
+    var opcoes = ["pedra.png", "papel.png", "tesoura.png"]; // Substitua pelos nomes das suas imagens
+    var sorteio = Math.random() * opcoes.length; // Gera um número aleatório para selecionar uma opção
+    resultado_ex5.innerHTML = `<img src="${opcoes[sorteio.toFixed(0)]}" alt="Jokenpo" height="200"><br>`;
+    resultado_ex5.innerHTML += "Jogador 1 venceu!"; // Aqui você pode implementar a lógica de quem vence
+}
+</script>
+
+<!-- EXERCÍCIO 6 - Sortear momento do dia -->
+<h3>Exercício 6</h3>
+<button onclick="sortearMomento()">Sortear momento do dia</button>
+<div id="resultado_ex6"></div>
+
+<script>
+function sortearMomento() {
+    var hora = Math.random() * 24; // Hora entre 0 e 23
+    var mensagem;
+    if (hora < 12) {
+        mensagem = `Bom dia, flor do dia, são ${hora.toFixed(0)}h!`;
+    } else if (hora < 18) {
+        mensagem = `Boa tarde, já vai tarde! São ${hora.toFixed(0)}h!`;
+    } else {
+        mensagem = `Boa noite, durma bem! São ${hora.toFixed(0)}h!`;
+    }
+    resultado_ex6.innerHTML = mensagem;
+}
+</script>
+
+<!-- EXERCÍCIO 7 - Sortear número cabalístico -->
+<h3>Exercício 7</h3>
+<button onclick="sorteioCabalistico()">Quero um número cabalístico!</button>
+<div id="resultado_ex7"></div>
+
+<script>
+function sorteioCabalistico() {
+    var numero = Math.random() * 15; // Número entre 1 e 15
+    resultado_ex7.innerHTML = numero.toFixed(0) + "<br>";
+    if ([3, 4, 7, 10, 12].includes(numero.toFixed(0))) {
+        resultado_ex7.innerHTML += "Eu S2 números cabalísticos!";
+    } else {
+        resultado_ex7.innerHTML += "Ah, me dá um número bom na próxima!";
+    }
+}
+</script>
+
+</body>
+</html>

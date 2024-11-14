@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>And&&Ex07</title>
+</head>
+<body>
+
+    <h1>Sistema SPTECH de Autenticação</h1>
+
+    Usuário:
+    <input id="ipt_log" type="text">
+     <br>
+    Senha:
+    <input id="ipt_pass" type="password">
+    <br>
+
+    <button onclick="login()">Login</button>
+    
+</body>
+</html>
+<script>
+        var log = (ipt_log.value);
+        var pass = (ipt_pass.value);
+
+        function login(){
+
+        var log = (ipt_log.value);
+        var pass = (ipt_pass.value);
+
+        if (log== "SPTech" && pass== "digital")
+
+        alert ("Usuário autenticado com sucesso!")
+        else {
+
+            alert("Falha na autenticação!")
+        }
+
+        }
+
+
+</script>

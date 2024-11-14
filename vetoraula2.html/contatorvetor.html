@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Nome: <input type="text" id="ipt_nome">
+    Sobrenome: <input type="text" id="ipt_sobrenome">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="exibir()">Exibir</button>
+
+    <div id="div_mensagem" style="display: flex; flex-wrap: nowrap;">
+
+
+    </div>
+
+
+</body>
+
+</html>
+<script>
+    var lista_contatos = [];
+
+    
+    function cadastrar() {
+    
+        var nome = ipt_nome.value;
+        var sobrenome = ipt_sobrenome.value;
+        var nomeCompleto = `${nome} ${sobrenome}`
+
+
+
+        lista_contatos.push(nomeCompleto);
+
+        div_mensagem.innerHTML = `O contato ${nomeCompleto} foi adicionado! <br>`;
+    }
+
+
+    function exibir() {
+
+            div_mensagem.innerHTML = ""
+
+        for (var index = 0; index < lista_contatos.length; index++) {
+
+            var nome_atual = lista_contatos[index]
+
+            div_mensagem.innerHTML += `CONTATO ${index+145}: ${nome_atual}<br><br>`
+
+
+        }
+
+    }
+
+
+</script>

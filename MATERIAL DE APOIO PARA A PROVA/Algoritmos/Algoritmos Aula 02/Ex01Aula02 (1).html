@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex-01Aula02</title>
+</head>
+<body>
+    Ano de Nascimento: <input id="input_idade" type="text"> <br>
+
+    <button onclick="cadastrarH()">Aposentadoria Homem</button>
+    <button onclick="cadastrarM()">Aposentadoria Mulher</button>
+
+    
+</body>
+<script>
+    function cadastrarH(){
+        var anoUsuario = Number(input_idade.value)
+        var idadeUsuario = 2024 - anoUsuario
+        var tempoRestanteAposentadoria = 70 - idadeUsuario
+        var mensagem = "Faltam " + tempoRestanteAposentadoria + " anos para você se aposentar!"
+
+        alert(mensagem)
+    }
+    function cadastrarM(){
+        var anoUsuario = Number(input_idade.value)
+        var idadeUsuario = 2024 - anoUsuario
+        var tempoRestanteAposentadoria = 60 - idadeUsuario
+        var mensagem = "Faltam " + tempoRestanteAposentadoria + " anos para você se aposentar!"
+
+        alert(mensagem)
+
+    }
+
+
+    
+
+
+
+
+</script>
+</html>

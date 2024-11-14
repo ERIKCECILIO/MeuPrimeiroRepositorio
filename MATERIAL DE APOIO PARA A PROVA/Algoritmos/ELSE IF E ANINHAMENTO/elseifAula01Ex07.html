@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Quantidade de pães franceses ao dia: <input type="number" id="ipt_paes"><BR></BR>
+    Quantidade de pacotes de bolacha recheada ao dia: <input type="number" id="ipt_bolachas"><br><br>
+    Quantidade de copos de achocolatado: <input type="number" id="ipt_copos"><br><br>
+
+    <button onclick="verificar()">Verificar calorias!</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+
+    function verificar() {
+
+        var paes = Number(ipt_paes.value);
+        var bolachas = Number(ipt_bolachas.value);
+        var copos = Number(ipt_copos.value);
+
+        paes = paes * 50
+        bolachas = bolachas * 80
+        copos = copos * 70
+
+        var totalCalorias = paes + bolachas + copos
+
+        if (totalCalorias > 400) {
+            div_mensagem.innerHTML = "Alerta crítico de saúde !!!"
+
+        } else if (totalCalorias < 200) { 
+            div_mensagem.innerHTML = "Parabéns, vai ficar em forma!" 
+
+        } else {
+            div_mensagem.innerHTML = "Cuidado, vai ficar menos saudável!"
+
+        }
+
+
+
+    }
+
+
+
+
+
+</script>

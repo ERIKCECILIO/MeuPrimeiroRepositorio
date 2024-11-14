@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota Avaliação Continuada: <input type="number" id="ipt_continuada">
+    Nota Avaliação Semestral: <input type="number" id="ipt_semestral">
+
+    Nome do Aluno: <input type="text" id="ipt_nome">
+
+    <button onclick="calcular()">Calcule sua média!</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var continuada = Number (ipt_continuada.value);
+        var semestral = Number (ipt_semestral.value);
+        var nome = (ipt_nome.value)
+
+        var media = (continuada + semestral) / 2
+
+        mensagem.innerHTML = (`A média de ${nome} será de ${media}!`)
+    }
+</script>

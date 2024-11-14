@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEx14</title>
+</head>
+
+<body>
+    <input type="number" id="ipt_intervalo1">
+    <input type="number" id="ipt_intervalo2">
+
+
+    <button onclick="multi()">Curto 3 e 5!</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+
+
+    function multi() {
+
+        var inicio = Number(ipt_intervalo1.value)
+        var fim = Number(ipt_intervalo2.value)
+
+        var mensagem = ""
+
+
+        for (var contador = inicio; contador <= fim; contador++) {
+
+            if (contador % 5 == 0 && contador % 3 == 0) {
+                mensagem += `<br>É PENTA! É TRI!`
+
+            } else if (contador % 5 == 0) {
+                mensagem += `<br>É PENTA!`
+
+            } else if (contador % 3 == 0) {
+                mensagem += `<br>É TRI!`
+
+            } else (mensagem += `<br>${contador}`)
+
+        }
+        
+        div_mensagem.innerHTML = mensagem
+    }
+
+</script>

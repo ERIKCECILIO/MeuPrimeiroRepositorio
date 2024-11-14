@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>And&&Ex09</title>
+</head>
+
+<body>
+    <H1>Processo Seletivo Pilottus 2024!</H1>
+    <br><br>
+
+    Altura mínima desejada:
+    <input type="number" id="ipt_min"><br><br>
+
+    Altura máxima desejada:
+    <input type="number" id="ipt_max"><br><br>
+
+    <H2> Querido candidato à piloto </H2>
+
+    Digite seu nome:
+    <input type="text" id="ipt_nome"><br><br>
+    Digita sua altura:
+    <input type="number" id="ipt_altura"><br><br>
+
+    <button onclick="calcular()">Verificar Candidato</button>
+
+    <div id="div_men"></div>
+
+</body>
+
+</html>
+<script>
+
+    function calcular() {
+
+
+        var alturamin = Number(ipt_min.value);
+        var alturamax = Number(ipt_max.value);
+        var piloto = ipt_nome.value;
+        var alturaPi = Number(ipt_altura.value);
+
+        if (alturamin > 1 && alturamax > alturamin) {
+
+            if (alturaPi >= alturamin && alturaPi <= alturamax) {
+
+                div_men.innerHTML = ` O candidato ${piloto}, com a altura de ${alturaPi} metros, participará do processo de seleção de pilotos!`
+
+            }
+
+
+
+            else {
+                alert(`Infelizmente, o  candidato ${piloto}, com a altura de ${alturaPi} metros, não atende aos requisitos da geração.`)
+            }
+        } else {
+
+            alert("Intervalo da altura de seleção é inválida! A altura inicial deve ser maior que 1 e a altura final deve ser maior que a altura inicial")
+
+        }
+
+    }
+
+
+
+</script>

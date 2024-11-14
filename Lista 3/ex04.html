@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do Guerreiro Sayajin: <input type="text" id="ipt_nome">
+    Ki Padrão: <input type="number" id="ipt_ki">
+
+    <button onclick="calcularki()">Ver Ki em cada forma!</button>
+</body>
+</html>
+<script>
+
+    function calcularki(){
+        var kiNormal = Number(ipt_ki.value);
+        var sayajin = kiNormal * 50
+        var sayajin2 = kiNormal * 100
+
+        alert(`Seu Ki quando você está Super Sayajin é de ${sayajin}!`)
+        alert(`Seu Ki quando você está Super Sayajin 2 é de ${sayajin2}!`)
+    }
+</script>

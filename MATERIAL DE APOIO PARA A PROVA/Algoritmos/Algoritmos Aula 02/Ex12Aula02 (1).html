@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Sabor da Pizza: <input type= "text" id="input_Sabor_pizza">
+    <br>
+    <br>
+    Valor: <input type="number" id="input_Valor_pizza">
+    <br>
+    <br>
+    Quantidade de Amigos: <input type="number" id="input_Qtd_amigos">
+    <br>
+    <br>
+    <button onclick= "PorAmigo()">Veja o valor dividido por cada amigo!</button>
+
+    <div id="div_mensagem"> Volte sempre! </div>
+</body>
+<script>
+     var taxa = 10
+
+    function PorAmigo() {
+            var valor = Number(input_Valor_pizza.value);
+            var friends = Number(input_Qtd_amigos.value)
+            var calcule = ( valor * 1.1) / friends
+        
+            var sabor = (input_Sabor_pizza.value);
+
+
+
+            var mensagem = (' Com adição de 10% da taxa de entrega, cada amigo vai colaborar com R$'
+             + calcule + ' para a pizza de '+ sabor );
+
+
+            div_mensagem.innerHTML = mensagem
+    }
+
+
+
+</script>
+
+
+</html>

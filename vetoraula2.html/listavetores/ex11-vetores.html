@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite aqui o preço do produto:<br>
+    <input type="number" id="ipt_preco"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="atualizar()">Atualizar Estoque</button><br><br>
+
+    <div id="div_men"></div>
+</body>
+
+</html>
+<script>
+    var lista_precos = []
+
+    function cadastrar() {
+        var precoProduto = Number(ipt_preco.value)
+
+        if (precoProduto != "") {
+
+            lista_precos.push(precoProduto)
+
+            div_men.innerHTML = `Preço do produto ${lista_precos.length} foi cadastrado com sucesso!`
+        } else {
+            div_men.innerHTML = "Digite algum valor válido, por favor."
+        }
+    }
+    function atualizar() {
+        var mensagem = ""
+        var soma = 0
+
+        for (var contador = lista_precos.length - 1; contador >= 0; contador--) {
+            mensagem += `Preço do produto ${lista_precos.length - contador}: R$${ListaPreco[index]}<br>`
+            soma += lista_precos[contador]
+        }
+
+        div_men.innerHTML = `${mensagem}<br>Você tem ${lista_precos.length} produtos cadastrados em estoque.
+        <br><br> Seu estoque vale o total de R$${soma.toFixed(2)}`
+    }
+</script>

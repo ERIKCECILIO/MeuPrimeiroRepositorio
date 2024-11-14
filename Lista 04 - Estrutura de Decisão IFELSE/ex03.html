@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota 1: <input type="number" id="ipt_nota1">
+    Nota 2: <input type="number" id="ipt_nota2">
+    Nota 3: <input type="number" id="ipt_nota3">
+<button onclick="analisar()">Analisar Desempenho</button>
+<div id="mensagem"></div>
+</body>
+</html>
+<script>
+        function analisar(){
+            var n1 = Number (ipt_nota1.value);
+            var n2 = Number (ipt_nota2.value);
+            var n3 = Number (ipt_nota3.value);
+
+            var media = (n1 + n2 + n3) / 3
+
+            mensagem.innerHTML = (`<br><br>Sua média foi de ${media.toFixed(2)}!<br><br>`)
+
+            if(media>9.4){
+
+                mensagem.innerHTML += `Parabéns, você é fora de série!`
+            } 
+        }
+
+
+
+
+</script>

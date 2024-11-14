@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    Informe aqui suas Músicas Mais Amadas:<input type="text" id="ipt_musicafav"> <br>
+    <br><button onclick="cadastrar()">Cadastrar</button> <br>
+    <br><button onclick="visualizar()">Visualizar</button><br>
+
+    De...
+    <br><br> <input type="text" id="ipt_de">
+    Até...
+    <br><br><input type="text" id="ipt_ate"> <br><br>
+
+    <br><button onclick="filtro()">Filtrar</button><br>
+
+    <div id="div_men"></div>
+</body>
+
+</html>
+
+<script>
+    var listaMusicasfavs = [];
+
+    function cadastrar() {
+
+        var musicafav = ipt_musicafav.value;
+
+        listaMusicasfavs.push(musicafav);
+    }
+
+    function visualizar() {
+        var tamanho = listaMusicasfavs.length;
+        var mensagem = ``;
+
+
+        for (var contador = 0; contador < tamanho; contador++) {
+            var musicaAtual1 = listaMusicasfavs[contador];
+
+            mensagem += `${contador + 1}ª Música: ${musicaAtual1}`;
+        }
+
+        div_men.innerHTML = mensagem;
+
+    }
+
+    function filtro() {
+        var de = Number(ipt_de.value) - 1;
+        var ate = Number(ipt_ate.value);
+        var mensagem = ``
+
+        for (de; de < ate; de++) {
+            var musicaAtual2 = listaMusicasfavs[de]
+            mensagem += `${de + 1}ª Música:${musicaAtual2}`
+        }
+
+        div_men.innerHTML = mensagem
+    }
+</script>

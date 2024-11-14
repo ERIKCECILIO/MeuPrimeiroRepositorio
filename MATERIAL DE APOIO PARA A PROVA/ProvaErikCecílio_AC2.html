@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Selecione o Serviço: <select id="select_servico">
+        <option value="#">Escolha uma opção</option>
+        <option value="manicure">Manicure</option>
+        <option value="barba">Barba</option>
+        <option value="cabelo">Cabelo</option>
+    </select> <br>
+
+
+    Selecione o Dia: <select id="select_dia">
+        <option value="#">Escolha uma opção</option>
+        <option value="segunda"> Segunda-feira </option>
+        <option value="terça"> Terça-feira </option>
+        <option value="quarta"> Quarta-feira </option>
+        <option value="quinta"> Quinta-feira </option>
+        <option value="sexta"> Sexta-feira </option>
+        <option value="sábado"> Sábado </option>
+        <option value="domingo"> Domingo </option>
+    </select> <br>
+
+    Selecione o Horário: <select id="select_horario">
+        <option value="#">Escolha uma opção</option>
+        <option value="0"> 00:00h </option>
+        <option value="1"> 01:00h </option>
+        <option value="2"> 02:00h </option>
+        <option value="3"> 03:00h </option>
+        <option value="4"> 04:00h </option>
+        <option value="5"> 05:00h </option>
+        <option value="6"> 06:00h </option>
+        <option value="7"> 07:00h </option>
+        <option value="8"> 08:00h </option>
+        <option value="9"> 09:00h </option>
+        <option value="10"> 10:00h </option>
+        <option value="11"> 11:00h </option>
+        <option value="12"> 12:00h </option>
+        <option value="13"> 13:00h </option>
+        <option value="14"> 14:00h </option>
+        <option value="15"> 15:00h </option>
+        <option value="16"> 16:00h </option>
+        <option value="17"> 17:00h </option>
+        <option value="18"> 18:00h </option>
+        <option value="19"> 19:00h </option>
+        <option value="20"> 20:00h </option>
+        <option value="21"> 21:00h </option>
+        <option value="22"> 22:00h </option>
+        <option value="23"> 23:00h </option>
+    </select> <br>
+
+    Qual será a recorrência de atendimentos em 1 ano? <input type="number" id="input_recorrencia"> <br>
+
+    <button onclick="realizar()">Realizar Orçamento</button>
+
+    <div id="div_resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+
+
+
+    function realizar() {
+        var horaAtendimento = select_horario.value
+        var correto = true
+        var anoCompleto = 365
+
+
+        var preco_servico = manicure.includes(20) ||
+            barba.includes(15) ||
+            cabelo.includes(30);
+
+        var desconto_servico =
+            manicure - 4 ||
+            barba - 3 ||
+            cabelo - 5;
+
+        var terçaQuinta = descontoManicure
+        var segundaQuarta = descontoBarba
+        var sextaDomingo = descontoCabelo
+
+
+        for (var disponibilidadeManicure = "8"; "16" >= horaAtendimento; disponibilidadeManicure++) {
+
+            if (disponibilidadeManicure < 8 && disponibilidadeManicure >= 16) {
+                div_resultado.innerHTML = (`O serviço selecionado não está disponível para esse horário`);
+            }
+        }
+
+        for (var disponibilidadeBarba = "13"; "20" >= horaAtendimento; disponibilidadeBarba++) {
+
+            if (disponibilidadeBarba < 13 && disponibilidadeBarba >= 20) {
+                div_resultado.innerHTML = (`O serviço selecionado não está disponível para esse horário`);
+            }
+        }
+
+        for (var disponibilidadeCabelo = "00"; "16" >= horaAtendimento; disponibilidadeCabelo++) {
+
+            if (disponibilidadeCabelo < 0 && disponibilidadeCabelo >= 23) {
+                div_resultado.innerHTML = (`O serviço selecionado não está disponível para esse horário`);
+            }
+
+            var selecione_horario = select_horario.includes(`#`) ||
+                select_horario.includes(`0`) ||
+                select_horario.includes(`1`) ||
+                select_horario.includes(`2`) ||
+                select_horario.includes(`3`) ||
+                select_horario.includes(`4`) ||
+                select_horario.includes(`5`) ||
+                select_horario.includes(`6`) ||
+                select_horario.includes(`7`) ||
+                select_horario.includes(`8`) ||
+                select_horario.includes(`9`) ||
+                select_horario.includes(`10`) ||
+                select_horario.includes(`11`) ||
+                select_horario.includes(`12`) ||
+                select_horario.includes(`13`) ||
+                select_horario.includes(`14`) ||
+                select_horario.includes(`15`) ||
+                select_horario.includes(`16`) ||
+                select_horario.includes(`17`) ||
+                select_horario.includes(`18`) ||
+                select_horario.includes(`19`) ||
+                select_horario.includes(`20`) ||
+                select_horario.includes(`21`) ||
+                select_horario.includes(`22`) ||
+                select_horario.includes(`23`);
+
+            var selecione_dia =
+                select_dia.includes(`#`) ||
+                select_dia.includes(`segunda`) ||
+                select_dia.includes(`terça`) ||
+                select_dia.includes(`quarta`) ||
+                select_dia.includes(`quinta`) ||
+                select_dia.includes(`sexta`) ||
+                select_dia.includes(`sábado`) ||
+                select_dia.includes(`domingo`);
+
+            var servico =
+                select_servico.includes(`#`) ||
+                select_servico.includes(`manicure`) ||
+                select_servico.includes(`barba`) ||
+                select_servico.includes(`cabelo`);
+
+            var recorrencia = Number(input_recorrencia.value);
+
+            var recorrenciaManicure = 0
+            var recorrenciaBarba = 0
+            var recorrenciaCabelo = 0
+
+            var bonusFidelidade = recorrenciaManicure.value ||
+                recorrenciaBarba.value ||
+                recorrenciaCabelo.value;
+
+            if (recorrencia && recorrenciaManicure >= 3) {
+                preco_servico = preco_servico == bonusFidelidade
+            } else (preco_servico)
+
+            if (recorrencia && recorrenciaBarba >= 4) {
+                preco_servico = preco_servico == bonusFidelidade
+            } else (preco_servico)
+
+            if (recorrencia && recorrenciaCabelo >= 6) {
+                preco_servico = preco_servico == bonusFidelidade
+            } else (preco_servico)
+
+
+
+            function exibir() {
+                var valorTotal = preco_servico
+                anoCompleto = (365 * preco_servico) / recorrencia
+                var valorFinal = anoCompleto
+
+
+
+                div_resultado.innerHTML = (`Atendimento ${recorrencia} - Serviço: ${servico} | Dia: ${selecione_dia} | Hora: ${selecione_horario} | Preço Serviço: ${preco_servico} | Desconto: ${desconto_servico} | Preço Final: ${valorTotal}`)
+            } div_resultado.innerHTML += (`Ao longo do ano, você será atendido ${anoCompleto} vezes, sendo ${bonusFidelidade} serviços grátis devido à fidelidade, onde o valor final do orçamento será de ${valorFinal}`)
+
+
+            if (selecione_dia && servico && selecione_horario & recorrencia == "#" && "") {
+                div_resultado.innerHTML = (`Preencha todos os campos para prosseguir`);
+            }
+
+        }
+
+    }
+
+
+
+    /*
+           CONSTRUA SEU CÓDIGO AQUI
+
+           Fiquei muito nervoso, me perdoa.
+   
+           NÃO ALTERE O HTML, SUJEITO A DESCONTOS
+       */
+</script>

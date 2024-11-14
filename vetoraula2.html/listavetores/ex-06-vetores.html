@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Digite AQUI os seus filmes favoritos:
+    <input type="text" id="input_filme"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="div_men"></div>
+</body>
+
+</html>
+<script>
+    var ListaFilmes = []
+
+    function cadastrar() {
+
+        var filmes = ipt_filme.value
+
+        if (filmes != "") {
+            ListaFilmes.push(filmes)
+            div_men.innerHTML += `<br> ${filmes}`
+        } else div_men.innerHTML = `Digite algum filme, por favor`
+    }
+
+</script>

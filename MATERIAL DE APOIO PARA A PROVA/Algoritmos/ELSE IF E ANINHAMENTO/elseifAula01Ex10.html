@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elseifAula01Ex10</title>
+</head>
+
+<body>
+    Consumo Mensal Kwh: <input type="number" id="ipt_mensal"><BR></BR>
+    Valor: <input type="number" id="ipt_valor"><br><br>
+
+    <button onclick="calcular()">Calcule sua conta!</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+
+        var kwh = Number(ipt_mensal.value);
+        var reais = Number(ipt_valor.value);
+        var conta = kwh * reais
+
+        var multa = conta * 0.10
+
+        var contaMulta = conta + multa
+
+        div_mensagem.innerHTML = `O valor da conta totalizou R$${conta}`
+
+
+        if (kwh > 300) {
+            conta = contaMulta
+            div_mensagem.innerHTML = `O valor da conta totalizou R$${conta}`
+        }
+        if (kwh <= 300) {
+            div_mensagem.innerHTML += `<br>Gastos dentro do esperado`
+
+        } else if (kwh > 500) {
+            div_mensagem.innerHTML += `<br>Economize energia, sua conta está muito alta!`
+        }
+        else {
+            div_mensagem.innerHTML += `<br> Gastos excessivos, multa aplicada`
+        }
+    }
+       
+</script>
